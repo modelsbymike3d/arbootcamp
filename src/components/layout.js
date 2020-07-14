@@ -18,7 +18,7 @@ const Wrapper = styled('div')`
   }
 
   .sideBarUL .item > a:hover {
-    background-color: #1ed3c6;
+    background-color: #FF6100;
     color: #fff !important;
 
     /* background: #F8F8F8 */
@@ -65,7 +65,7 @@ const RightSideBarWidth = styled('div')`
 const Layout = ({ children, location }) => (
   <ThemeProvider location={location}>
     <MDXProvider components={mdxComponents}>
-      <Wrapper>
+      <Wrapper className="thing">
         <LeftSideBarWidth className={'hiddenMobile'}>
           <Sidebar location={location} />
         </LeftSideBarWidth>

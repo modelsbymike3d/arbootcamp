@@ -1,5 +1,7 @@
 import { injectGlobal } from 'emotion';
 
+const themeColor = '#005fff';
+
 export const baseStyles = injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
@@ -76,7 +78,7 @@ export const baseStyles = injectGlobal`
     border-radius: 1px;
     margin: 0 auto;
     margin-top: 4px;
-    background-color: #001934;
+    background-color: ${themeColor};
   }
   .navBarToggle .iconBar:first-child {
     margin-top: 0px;
@@ -134,7 +136,7 @@ export const baseStyles = injectGlobal`
 
   .navbar-default .navbar-toggle:focus,
   .navbar-default .navbar-toggle:hover {
-    background-color: #001933;
+    background-color: ${themeColor};
   }
 
   .headerWrapper {
@@ -154,17 +156,17 @@ export const baseStyles = injectGlobal`
     border: none;
   }
   .formElement svg path {
-    fill: #2fd2c5;
+    fill: #000;
   }
   .searchInput {
     width: 100%;
-    background-color: rgba(28,211,198,.12) !important;
+    background-color: rgba(255,255,255,1) !important;
     border-width: 0 !important;
     color: #C2C2C2;
     padding: 10px;
     border-radius: 5px;
-    color: #fff;
-    opacity: .6;
+    color: #000;
+    opacity: 1;
     padding-left: 38px;
     max-width: 600px;
   }
@@ -257,7 +259,7 @@ export const baseStyles = injectGlobal`
     padding: 0 !important;
   }
   .navBarDefault {
-    background-color: #001934;
+    background-color: ${themeColor};
     border-radius: 0;
     border-top: 0;
     margin-bottom: 0;
@@ -272,6 +274,8 @@ export const baseStyles = injectGlobal`
     padding: 15px;
     position: relative;
     height: 80px;
+    background-color: #005fff;
+
   }
   .navBarHeader {
     min-width: 335px;
@@ -320,7 +324,7 @@ export const baseStyles = injectGlobal`
     border: 0 !important;
     background-color: rgb(245, 247, 249); /* !important; */
   }
-  
+
   blockquote {
     color: rgb(116, 129, 141);
     margin: 0px 0px 24px;
@@ -334,10 +338,21 @@ export const baseStyles = injectGlobal`
   }
   .socialWrapper li {
     display: inline-block;
+    margin: 4px;
   }
   .socialWrapper li a {
     display: contents;
   }
+
+  .socialButton {
+    width: 24px;
+    height: 24px;
+  }
+
+  .socialButton svg {
+    width: 100% !important
+  }
+
   .discordBtn, .twitterBtn {
     border-radius: 4px;
     border: solid 1px #d1d2d3;
@@ -374,7 +389,7 @@ export const baseStyles = injectGlobal`
     font-family: 'Poppins';
     font-size: 18px;
     font-weight: 600;
-    color: #001934;
+    color: ${themeColor};
     display: flex;
     align-items: center;
   }
@@ -384,7 +399,7 @@ export const baseStyles = injectGlobal`
   }
 
   .sidebarTitle a {
-    color: #001934;
+    color: ${themeColor};
   }
 
   .greenCircle {
@@ -398,14 +413,14 @@ export const baseStyles = injectGlobal`
   .headerNav {
     font-family: 'Roboto';
     padding: 0px 24px;
-    color: #001933;
+    color: ${themeColor};
     font-size: 16px;
     font-weight: 500;
     line-height: 1em;
   }
 
   .headerNav a {
-    color: #001933;
+    color: ${themeColor};
     text-decoration: none;
   }
 
@@ -450,14 +465,14 @@ export const baseStyles = injectGlobal`
   }
 
   .hideFrontLine .active > a {
-    background-color: #1ed3c6;
+    background-color: #FF6100;
     color: #fff !important;
   }
   .firstLevel ul li .collapser svg path {
-    fill: #fff !important;
+    fill: ${themeColor} !important;
   }
   .active .collapser > svg > path {
-    fill: #001933 !important;
+    fill: ${themeColor} !important;
   }
 
   .firstLevel ul .item ul .item {
@@ -470,7 +485,7 @@ export const baseStyles = injectGlobal`
   }
 
   .sideBarUL .item > a {
-    color: #1ED3C6;
+    color: #ffffff;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -481,12 +496,12 @@ export const baseStyles = injectGlobal`
   }
 
   .showFrontLine .item > a:hover {
-    background-color: #001933;
+    background-color: ${themeColor};
   }
 
   .showFrontLine .active > a {
     /* color: #fff; */
-    background-color: #001933;
+    background-color: ${themeColor};
   }
 
   .sideBarUL .item .item {
@@ -508,7 +523,7 @@ export const baseStyles = injectGlobal`
     border-color: rgb(230, 236, 241) !important;
     border-style: solid none solid solid;
     border-width: 1px 0px 1px 1px;
-    background-color: #1ed3c6 !important;
+    background-color: #FF6100 !important;
     color: #fff;
   }
 
@@ -516,7 +531,6 @@ export const baseStyles = injectGlobal`
     display: flex;
     align-items: center;
     padding-bottom: 40px;
-    border-bottom: 1px solid rgb(230, 236, 241);
     margin-bottom: 32px;
   }
 
@@ -734,13 +748,13 @@ export const baseStyles = injectGlobal`
 
   @media (max-width: 767px) {
     .formElement svg path {
-      fill: #001934;
+      fill: ${themeColor};
     }
     .visibleMobileView {
       display: block !important;
     }
     .searchInput {
-      color: #001934;
+      color: ${themeColor};
     }
     .socialWrapper {
       position: absolute;

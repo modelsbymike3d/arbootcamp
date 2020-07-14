@@ -11,7 +11,7 @@ const SearchIcon = styled(Search)`
   margin-right: 10px;
   position: absolute;
   left: 15px;
-  color: #2fd2c5;
+  color: #000;
 `;
 
 const focus = props => css`
@@ -20,7 +20,7 @@ const focus = props => css`
   cursor: text;
   width: 5em;
   + ${SearchIcon} {
-    color: ${props => props.theme.darkBlue};
+    color: #000;
     margin: 0.3em;
   }
 `;

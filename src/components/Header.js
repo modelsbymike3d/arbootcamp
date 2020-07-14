@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { StaticQuery, graphql } from 'gatsby';
-import GitHubButton from 'react-github-btn';
 import Link from './link';
 import Loadable from 'react-loadable';
 
 import config from '../../config.js';
 import LoadingProvider from './mdxComponents/loading';
 import { DarkModeSwitch } from './DarkModeSwitch';
+
+import SocialLinks from './SocialLinks';
 
 const help = require('./images/help.svg');
 
@@ -90,7 +91,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
         },
       } = data;
 
-      const finalLogoLink = logo.link !== '' ? logo.link : 'https://hasura.io/';
+      const finalLogoLink = logo.link !== '' ? logo.link : '/';
 
       return (
         <div className={'navBarWrapper'}>
@@ -111,8 +112,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
             {config.header.social ? (
               <ul
                 className="socialWrapper visibleMobileView"
-                dangerouslySetInnerHTML={{ __html: config.header.social }}
-              ></ul>
+              ><SocialLinks /></ul>
             ) : null}
             {isSearchEnabled ? (
               <div className={'searchWrapper hiddenMobile navBarUL'}>
@@ -164,23 +164,16 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                 ) : null}
                 {config.header.social ? (
                   <li className={'hiddenMobile'}>
-                    <ul
+                    {/* <ul
                       className="socialWrapper"
                       dangerouslySetInnerHTML={{ __html: config.header.social }}
-                    ></ul>
+                    ></ul> */}
+                    <ul className="socialWrapper">
+                      <SocialLinks />
+                    </ul>
                   </li>
                 ) : null}
-                {githubUrl !== '' ? (
-                  <li className={'githubBtn'}>
-                    <GitHubButton
-                      href={githubUrl}
-                      data-show-count="true"
-                      aria-label="Star on GitHub"
-                    >
-                      Star
-                    </GitHubButton>
-                  </li>
-                ) : null}
+
                 <li>
                   <DarkModeSwitch
                     isDarkThemeActive={isDarkThemeActive}
