@@ -2,6 +2,8 @@ import { injectGlobal } from 'emotion';
 
 const themeColor = '#005fff';
 
+const secondaryColor = '#FF6100';
+
 export const baseStyles = injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
@@ -37,6 +39,10 @@ export const baseStyles = injectGlobal`
   a {
     transition: color 0.15s;
     /* color: #663399; */
+  }
+
+  a:visited {
+    text-decoration: none;
   }
 
   body {
@@ -225,7 +231,7 @@ export const baseStyles = injectGlobal`
   }
   .headerTitle {
     height: auto;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.5;
     font-weight: 300;
     color: #fff !important;
@@ -389,7 +395,7 @@ export const baseStyles = injectGlobal`
     font-family: 'Poppins';
     font-size: 18px;
     font-weight: 600;
-    color: ${themeColor};
+    color: ${secondaryColor};
     display: flex;
     align-items: center;
   }
@@ -465,7 +471,7 @@ export const baseStyles = injectGlobal`
   }
 
   .hideFrontLine .active > a {
-    background-color: #FF6100;
+    background-color: ${secondaryColor};
     color: #fff !important;
   }
   .firstLevel ul li .collapser svg path {
@@ -523,7 +529,7 @@ export const baseStyles = injectGlobal`
     border-color: rgb(230, 236, 241) !important;
     border-style: solid none solid solid;
     border-width: 1px 0px 1px 1px;
-    background-color: #FF6100 !important;
+    background-color: ${secondaryColor} !important;
     color: #fff;
   }
 
@@ -769,7 +775,7 @@ export const baseStyles = injectGlobal`
     }
     .headerTitle {
       padding-right: 50px;
-      font-size: 16px;
+      font-size: 24px;
     }
     .navBarBrand {
       min-height: 40px;

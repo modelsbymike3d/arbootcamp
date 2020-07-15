@@ -7,6 +7,7 @@ import { Layout, Link } from '$components';
 import NextPrevious from '../components/NextPrevious';
 import config from '../../config';
 import { StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
+import AuthorInfo from '../components/AuthorInfo';
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
@@ -92,8 +93,8 @@ export default class MDXRuntimeTest extends Component {
         </Helmet>
         <div className={'titleWrapper'}>
           <StyledHeading>{mdx.fields.title}</StyledHeading>
-
         </div>
+        <AuthorInfo {...mdx.frontmatter} />
         <StyledMainWrapper>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </StyledMainWrapper>
@@ -129,6 +130,10 @@ export const pageQuery = graphql`
       frontmatter {
         metaTitle
         metaDescription
+        author
+        snapchat
+        twitter
+        instagram
       }
     }
     allMdx {
