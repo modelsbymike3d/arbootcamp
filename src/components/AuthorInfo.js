@@ -1,19 +1,15 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { SnapchatGhost, Instagram, Twitter } from '@styled-icons/fa-brands';
-
-const SnapchatIcon = SnapchatGhost
-
-const InstagramIcon = styled(Instagram)`
-color: white;
-`;
-
-const TwitterIcon = styled(Twitter)`
-color: white;
-`;
+import { SnapchatGhost, Instagram, Twitter, Youtube } from '@styled-icons/fa-brands';
 
 const Wrapper = styled('div')`
+  .authorInfo {
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
   .authorLinks {
     display: flex;
     flex-direction: row;
@@ -22,46 +18,54 @@ const Wrapper = styled('div')`
 
   .authorLinks a {
     color: ${props => props.theme.colors.heading};
-    margin: 6px 24px 0px 0px;
+    margin: 6px 16px 0px 0px;
   }
 
   .authorSocial {
-    width: 24px;
+    width: 18px;
   }
 `;
 
-const AuthorInfo = ({author, snapchat, instagram, twitter}) =>
+const AuthorInfo = ({author, snapchat, instagram, twitter, youtube}) =>
  (
    <Wrapper >
     <div className="authorInfo">
-      {author}
+      { author && author.length > 0 &&
+        <div>{`Contributed by ${author}`}</div>
+      }
       <div className="authorLinks">
-        <a href='https://www.snapchat.com/add/modelsbymike3d'>
-          <div className="authorSocial">
-            <SnapchatIcon/>
-          </div>
-        </a>
+        { snapchat && snapchat.length > 0 &&
+          <a href={`https://www.snapchat.com/add/${snapchat}`}>
+            <div className="authorSocial">
+              <SnapchatGhost/>
+            </div>
+          </a>
+        }
+
+        { instagram && instagram.length > 0 &&
+          <a href={`https://www.instagram.com/${instagram}`}>
+            <div className="authorSocial">
+              <Instagram/>
+            </div>
+          </a>
+        }
+
+        { twitter && twitter.length > 0 &&
+          <a href={`https://www.twitter.com/${twitter}`}>
+            <div className="authorSocial">
+              <Twitter/>
+            </div>
+          </a>
+        }
+
+        { youtube && youtube.length > 0 &&
+          <a href={`https://www.twitter.com/${twitter}`}>
+            <div className="authorSocial">
+              <Youtube/>
+            </div>
+          </a>
+        }
       </div>
-
-      <ul className="socialWrapper">
-        <li>
-
-        </li>
-        <li>
-          <a href='https://www.instagram.com/modelsbymike3d/'>
-            <div className="socialButton">
-              <InstagramIcon />
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href='https://www.twitter.com/modelsbymike3d/'>
-            <div className="socialButton">
-              <TwitterIcon />
-            </div>
-          </a>
-        </li>
-      </ul>
     </div>
   </Wrapper>
 
