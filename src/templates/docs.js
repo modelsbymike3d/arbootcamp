@@ -131,9 +131,11 @@ export const pageQuery = graphql`
         metaTitle
         metaDescription
         author
+        homepage
         snapchat
         twitter
         instagram
+        youtube
       }
     }
     allMdx {

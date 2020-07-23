@@ -3,11 +3,14 @@ import styled from '@emotion/styled';
 
 import { SnapchatGhost, Instagram, Twitter, Youtube } from '@styled-icons/fa-brands';
 
+import { ExternalLink } from '@styled-icons/heroicons-solid';
+
 const Wrapper = styled('div')`
   .authorInfo {
     font-style: italic;
     font-size: 14px;
     margin-bottom: 20px;
+    color: ${props => props.theme.colors.heading};
   }
 
   .authorLinks {
@@ -24,51 +27,67 @@ const Wrapper = styled('div')`
   .authorSocial {
     width: 18px;
   }
+
+  .inlineSocial {
+    width: 18px;
+    display: inline-block;
+  }
+
+  .authorHomePageLink a {
+    color: ${props => props.theme.colors.heading};
+  }
 `;
 
-const AuthorInfo = ({author, snapchat, instagram, twitter, youtube}) =>
- (
-   <Wrapper >
+const AuthorInfo = ({ author, snapchat, instagram, twitter, youtube, homepage }) => (
+  <Wrapper>
     <div className="authorInfo">
-      { author && author.length > 0 &&
-        <div>{`Contributed by ${author}`}</div>
-      }
+      {author && author.length > 0 && (
+        <div className="authorHomePageLink">
+          {`Contributed by ${author}`}{' '}
+          {homepage && homepage.length > 0 && (
+            <a href={`${homepage}`}>
+              <div className="inlineSocial">
+                <ExternalLink />
+              </div>
+            </a>
+          )}
+        </div>
+      )}
       <div className="authorLinks">
-        { snapchat && snapchat.length > 0 &&
+        {snapchat && snapchat.length > 0 && (
           <a href={`https://www.snapchat.com/add/${snapchat}`}>
             <div className="authorSocial">
-              <SnapchatGhost/>
+              <SnapchatGhost />
             </div>
           </a>
-        }
+        )}
 
-        { instagram && instagram.length > 0 &&
+        {instagram && instagram.length > 0 && (
           <a href={`https://www.instagram.com/${instagram}`}>
             <div className="authorSocial">
-              <Instagram/>
+              <Instagram />
             </div>
           </a>
-        }
+        )}
 
-        { twitter && twitter.length > 0 &&
+        {twitter && twitter.length > 0 && (
           <a href={`https://www.twitter.com/${twitter}`}>
             <div className="authorSocial">
-              <Twitter/>
+              <Twitter />
             </div>
           </a>
-        }
+        )}
 
-        { youtube && youtube.length > 0 &&
+        {youtube && youtube.length > 0 && (
           <a href={`https://www.twitter.com/${twitter}`}>
             <div className="authorSocial">
-              <Youtube/>
+              <Youtube />
             </div>
           </a>
-        }
+        )}
       </div>
     </div>
   </Wrapper>
-
 );
 
 export default AuthorInfo;

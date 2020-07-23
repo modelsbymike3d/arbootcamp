@@ -1,41 +1,10 @@
 ---
 title: 'Introduction'
-metaTitle: 'This is the title tag of this page'
-metaDescription: 'This is the meta description'
+metaTitle: 'Introduction to augmented reality (AR)'
+metaDescription: 'What is augmented reality and why should I care?'
 ---
 
-Some introduction text. Lists out all the headings from h1 to h6. Easy to customise.
+What is augmented reality? In short, it is overlaying something digital over the physical world, generally through a phone screen.
+Snapchat is famous for its AR effects, and Instagram is focusing more on AR as well. But you've probably already been seeing augmented reality for a while. Ever watch a football game on TV? The first down line is augmented reality. It doesn't physically exist, but it gets drawn over the picture before it is sent to your TV.
 
-# Heading H1
-
-Heading 1 text
-
-## Heading H2
-
-Heading 2 text
-
-### Heading H3
-
-Heading 3 text
-
-#### Heading H4
-
-Heading 4 text
-
-##### Heading H5
-
-Heading 5 text
-
-###### Heading H6
-
-Heading 6 text
-
-[This is a link](https://www.google.com)
-
-## Lists
-
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+AR can be practical (as in the case of the first down line), but more often than not it is associated with messaging or entertainment e.g. Snapchat and Instagram. One of the exciting things about augmented reality is how open the field still is. There are lots of areas still to explore.
