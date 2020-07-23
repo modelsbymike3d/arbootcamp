@@ -2,7 +2,7 @@ const config = {
   gatsby: {
     pathPrefix: '/',
     siteUrl: 'https://arbootcamp.com',
-    gaTrackingId: null,
+    gaTrackingId: 'UA-173415966-1',
     trailingSlash: false,
   },
   header: {
@@ -41,7 +41,7 @@ const config = {
     description: 'The best way to learn how to create augmented reality lenses and filters',
     ogImage: null,
     docsLocation: 'https://learn.arbootcamp.com',
-    favicon: 'src/pwa-512.png',
+    favicon: 'icon.png',
   },
   pwa: {
     enabled: false, // disabling this will also remove the existing service worker.
@@ -55,7 +55,7 @@ const config = {
       crossOrigin: 'use-credentials',
       icons: [
         {
-          src: 'src/pwa-512.png',
+          src: 'src/icon.png',
           sizes: `512x512`,
           type: `image/png`,
         },
