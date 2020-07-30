@@ -48,7 +48,7 @@ Each point you see on the face is a control point that you can click and drag. Y
 
 Down below the face there are two buttons. One button will toggle symmetry on/off (it is on by default) and the other button will reset all of the points. Use the reset button to start over if you aren't happy with how things are turning out.
 
-Now all you have to do is move the points around until you're happy with the result. You can do subtle changes like a slight narrowing of the face for a beauty filter, or you can go crazy and create some weird looking faces. Speaking of crazy faces, [check out these lenses by Kriptk](https://lensstudio.snapchat.com/creator/kfYJXQs78H0EbGk-ntF1cw) for some inspiration.
+Now all you have to do is move the points around until you're happy with the result. You can do subtle changes like a slight narrowing of the face for a "beauty" filter, or you can go crazy and create some weird looking faces. Speaking of crazy faces, [check out these lenses by Kriptk](https://lensstudio.snapchat.com/creator/kfYJXQs78H0EbGk-ntF1cw) for some inspiration.
 
 Over on the right in the [Preview panel](https://lensstudio.snapchat.com/guides/general/previewing-your-lens/), if you look where it says "Idle Person 1" at the top, you can click that to select different people and facial expressions to make sure everything is looking good.
 
