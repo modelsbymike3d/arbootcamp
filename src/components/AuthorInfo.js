@@ -79,7 +79,7 @@ const AuthorInfo = ({ author, snapchat, instagram, twitter, youtube, homepage })
         )}
 
         {youtube && youtube.length > 0 && (
-          <a href={`https://www.twitter.com/${twitter}`}>
+          <a href={`${youtube}`}>
             <div className="authorSocial">
               <Youtube />
             </div>

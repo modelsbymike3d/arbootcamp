@@ -7,7 +7,7 @@ author: 'Michael Porter'
 snapchat: 'modelsbymike3d'
 instagram: 'modelsbymike3d'
 twitter: 'modelsbymike3d'
-youtube: ''
+youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
