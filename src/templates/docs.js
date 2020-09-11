@@ -8,6 +8,7 @@ import NextPrevious from '../components/NextPrevious';
 import config from '../../config';
 import { StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
 import AuthorInfo from '../components/AuthorInfo';
+import NotFound from '../components/404';
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
@@ -15,8 +16,12 @@ export default class MDXRuntimeTest extends Component {
   render() {
     const { data } = this.props;
 
-    if (!data) {
-      return null;
+    if (!data || !data.site) {
+      return (
+        <Layout {...this.props}>
+          <NotFound />
+        </Layout>
+      );
     }
     const {
       allMdx,
