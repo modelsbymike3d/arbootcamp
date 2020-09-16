@@ -26,6 +26,7 @@ const config = {
     forcedNavOrder: [
       '/introduction', // add trailing slash if enabled above
       '/snapchat-beginner',
+      '/snapchat-intermediate',
     ],
     collapsedNav: [],
     links: [
