@@ -18,11 +18,11 @@ const calculateTreeData = edges => {
       accu,
       {
         node: {
-          fields: { slug, title },
+          fields: { slug, title, sort },
         },
       }
     ) => {
-      const parts = slug.split('/');
+      const parts = sort.split('/');
 
       let { items: prevItems } = accu;
 

@@ -86,9 +86,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         node,
         value: value === '' ? `/` : `/${value}/`,
       });
+      createNodeField({
+        name: `sort`,
+        node,
+        value: value === '' ? `/` : `/${value}/`,
+      });
     } else {
       createNodeField({
         name: `slug`,
+        node,
+        value: `/${value.replace(/\/\d{3}-/, '/')}`,
+      });
+
+      createNodeField({
+        name: `sort`,
         node,
         value: `/${value}`,
       });

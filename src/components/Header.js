@@ -191,6 +191,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                 onKeyDown={myFunction}
                 role="button"
                 tabIndex={0}
+                aria-label={'Navbar toggle'}
               >
                 <span className={'iconBar'}></span>
                 <span className={'iconBar'}></span>
