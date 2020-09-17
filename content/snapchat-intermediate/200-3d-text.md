@@ -15,14 +15,14 @@ homepage: 'https://modelsbymike3d.com'
   <iframe
     width="560"
     height="315"
-    src="https://www.youtube.com/embed/FzHGZmdg9bE"
+    src="https://www.youtube.com/embed/A2J0Ruf9cHw"
     frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
   ></iframe>
 </div>
 
-In this tutorial we'll go over how to create 3D text inside of Lens Studio. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=27688ceaec6f4622b2faa39026598cc9&metadata=01) or by scanning the snapcode below.
+In this tutorial we'll go over how to create 3D text inside of Lens Studio. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=e8090cbca14843d2875638c04fc605b9&metadata=01) or by scanning the snapcode below.
 
 ![Snapcode for lens with 3D text](../../snapchat-intermediate/3d-text/snapcode.png)
 
@@ -40,141 +40,193 @@ For this effect we are going to start with a blank project. In the [Objects Pane
 
 Now let's head on down to the Resources Panel. We need to add the following items:
 
-- `Text Texture` - This is the source of the text that we are going to be using. Usually when working with text we either add a Text object or Screen Text in the Objects Panel, but for this we want to use a texture because this will let us apply different materials to it.
+- `Text Texture` - This is the source of the text that we are going to be using. Usually when working with text we either add a Text object or Screen Text in the Objects Panel, but for this we want to use a texture because this will let us apply different materials to it. Go ahead and put some placeholder text in here for now.
 - `Main Material` - This is going to the material for the face of our text. You can use whichever material you want. To keep things simple, you can start out with just an Unlit material and modify or replace it later.
 - `Shadow Material` - This is going to be the material that lies behind the face of our text and gets applied to each of our layers making up the effect. I recommend using just an Unlit material for this.
 - `Script` - Create a new script and name it whatever you want. Our script will be reusable in other projects, so some sort of name like 'text3D' or something might be a good idea.
 - `Font` - This is optional, but go ahead and load in a custom font if you want. Lens Studio has a few built-in fonts, or you can download and import a font of your choice. For this tutorial I am going to use the 'Pacifico' font which is built-in and can be imported directly through the Resources Panel.
 
-# Creating the green screen effect
+# Scripting
 
-Now that we have our images downloaded and our scene elements added, let's get the green screen effect created. In the Objects Panel, click on the Screen Image that we added earlier. You'll notice that it is nested under a Full Frame Region which itself is nested under an Orthographic Camera. A screen image is 2D only, there is no concept of depth, so it has to be added to an Orthographic Camera which is essentially a 2D only camera.
+> There are multiple ways to accomplish what we want to do. This method is what works best for me.
 
-Go ahead and click on the Screen Image, and then over in the Inspector Panel, click on the Texture box and choose one of the images you added. You should now see your image overlaid in the preview.
+## The inputs
 
-![Setting the screen image texture](../../snapchat-beginner/virtual_background/setting_image.jpg)
+To make our script reusable and customizable, we need a few inputs.
 
-You'll notice that the image doesn't fill the whole screen, nor is the person fully visible. Let's fix that. A few rows beneath where we set the screen image texture you'll see a dropdown for the [stretch mode](https://lensstudio.snapchat.com/guides/2d/image/). The default stretch mode is "Fit" which ensures our entire image is visible without stretching it in any direction. We are going to change it to "Fill" so that the entire screen is filled. The Fill mode will scale the image without causing any stretching. As an added bonus, it will work on any screen size, so even if someone uses this lens in [Snap Camera](https://snapcamera.snapchat.com/) on the desktop, our virtual background will look good and have no distortion.
+- `SceneObject parent` - This is the parent object that all our layers will live under.
+- `SceneObject textImage` - This is going to be the image which has our text applied to it and will be the base for the effect.
+- `Asset.Texture textTexture` - Though not strictly required for 3D text, by providing the Text Texture as input we can dynamically change what our text reads.
+- `float offset = 0.02` - The spacing between the layers. We'll default to a value of 0.02 which gives pretty smooth results.
+- `int numLayers = 50` - How many layers we want to use for the effect. I've found that 50 layers gives a pretty good feeling of depth, but feel free to adjust to your preferences.
+- `Asset.Material shadowMat` - We are going to give our Face Image our Main material, but then apply our Shadow material to each of the layers. This helps differentiate between the front face of the text and our layers.
+- `bool autoUpdate` - This is just a flag we can toggle on/off while setting up our scene. When we publish our lens we'll want to turn this off.
 
-Now that our background image is filling the screen, let's make sure we can see the person! Remember that Portrait Background Segmentation we added earlier? Segmentation is a fancy word for outlining, and the Portrait Background type lets us separate people from the background. Click on the Orthographic Camera in the Objects Panel, then in the Inspector Panel click on the "Mask Texture" box and select the segmentation texture. Voila! It's working!
-
-# The S-word
-
-Our lens is pretty cool with the virtual background, but wouldn't it be cooler if we could tap to cycle through the different images we downloaded? You would think there would be something built in for this, but unfortunately there isn't. This brings us to scripting.
-
-If you aren't already a developer, scripting can be pretty confusing. Don't run away yet, we're going to walk through the process step-by-step. It's possible to make lots of awesome lenses without writing any code, but it is definitely something you'll want to learn more about if you want to take your lenses to the next level. Let's get started.
-
-## Add a script
-
-[Adding a script](https://lensstudio.snapchat.com/guides/scripting/scripting-overview/) to your lens is a two step process. First we create a script in the Resources Panel. Once you've done that, we need to add it to our scene. With the Orthographic Camera selected, click on the "Add Component" button in the Inspector Panel. It'll be underneath the last item in the panel. Select "Script" and then click on the "Add Script" button. Choose the script we just created and we are ready to move on to the next step!
-
-## Set the inputs
-
-Now that we've added our script to the scene, let's write some code so it actually does something. Select the script in the Resources Panel, then back over in the Inspector Panel click on the "Open in" button and choose "Open Built-in Editor." Now we'll see a blank code editor in the main window.
-
-The first line in the code editor will look like the following:
+Your script should so far look like this:
 
 ```javascript
 // -----JS CODE-----
+// @input SceneObject parent
+// @input SceneObject textImage
+// @input Asset.Texture textTexture
+// @input float offset = 0.02
+// @input int numLayers = 50
+// @input Asset.Material shadowMat
+// @input bool autoUpdate
 ```
 
-Any line that starts with `//` is a comment line and won't actually run. It's a handy way to leave notes to help you (and others) know what specific parts of the code do. The `JS CODE` part is letting us know that our lenses can run JavaScript (not to be confused with Java).
+## Initializing the layers
 
-To change our background, we need to tell Lens Studio what image we want to change, and also provide it a list of images to cycle through. To do this, Lens Studio lets us write special comment lines with `@input` to let us specify custom inputs. Let's add the following two lines to our script:
-
-```javascript
-// @input Component.Image background
-// @input Asset.Texture[] images
-```
-
-Let's break this down. Component.Image is going to refer to our Screen Image that we added. The Asset.Texture[] part is going to let us input a list of images - the `[]` part means we'll be inputting a list rather than just a single item. This will be a little easier to understand in just a moment. Hit `ctrl-s` or `cmd-s` to save the script, then click on the Orthographic Camera again and look at the script component we added in the Inspector Panel. You'll now see a box to specify a Background image and a place to add values to our Images list. Go ahead and select the Screen Image for the background and your various images for the Images list.
-
-![Setting the script inputs](../../snapchat-beginner/virtual_background/script_inputs.jpg)
-
-## Detecting taps
-
-Okay, now back to our script. Select our script again in the Resources Panel to go back to the code editor. Now that we have our background and images, we are ready to start cycling through them!
-
-The first thing we need to do is detect when the user taps on the screen. Add the following code to your script:
+Our first order of business will be to create the different layers. We are going to iterate through the number of layers we specify in our script input, copy the Face Image, change the material, and then save it to an array. This block of code will look like the following:
 
 ```javascript
-script.createEvent('TapEvent').bind(function() {
-  print('Tap!');
-});
-```
+var instances = [];
 
-There's a lot going on here, so let's step through it. Lens Studio has a special `script` object that we can use to interact with the lens. The `createEvent` part is a feature that the `script` object gives us, and in our case we are interested in being notified about the `TapEvent`. The `bind` part means when there is a "TapEvent" that we want the following function to run. A function is a reusable block of code. If you click inside the Preview Panel, you should see the word 'Tap!' printed out in the Logger Panel when you click. If so, awesome! If not, double check to make sure you don't have any spelling errors anywhere.
-
-## Cycle through the images
-
-So we have a script and we can detect when someone taps the screen. How do we change the image? You are going to add a couple lines of code so that your full script looks like this:
-
-```javascript
-// -----JS CODE-----
-// @input Component.Image background
-// @input Asset.Texture[] images
-
-var index = 0;
-script.background.mainPass.baseTex = script.images[index];
-
-script.createEvent('TapEvent').bind(function() {
-  print('Tap');
-});
-```
-
-What in the world is going on? Most programming languages count through lists starting at `0`, so we are creating a variable to keep track of our list position and setting it equal to 0. Next, we are using `script.background` to access the background image we selected and setting the image texture to the first image in our list of images that we selected. How do we know that's how we set the texture? Fortunately, Lens Studio has some incredibly helpful reference pages for scripting which is [how I knew](https://lensstudio.snapchat.com/api/classes/Texture/) to use the `mainPass.baseTex` part. Don't worry if this all looks like gibberish. Scripting takes time to learn.
-
-Now we are going to add a couple lines inside our Tap Event code.
-
-```javascript
-// -----JS CODE-----
-// @input Component.Image background
-// @input Asset.Texture[] images
-
-var index = 0;
-script.background.mainPass.baseTex = script.images[index];
-
-script.createEvent('TapEvent').bind(function() {
-  index += 1;
-  script.background.mainPass.baseTex = script.images[index];
-  print('Tap');
-});
-```
-
-Here I just copied the same line of code that we used to set the background image, and above it we are incrementing the index by 1. The `+=` part means take the current variable value and add 1 to it. Now if you click in the Preview Panel, you should start cycling through your different backgrounds. But wait! What happens when you get to the end? Our index keeps increasing, but our list is all out of images so we get a nasty looking error in the Logger.
-
-To take care of this, we'll just reset our index to 0 whenever we go too high. Let's add a few more lines of code:
-
-```javascript
-// -----JS CODE-----
-// @input Component.Image background
-// @input Asset.Texture[] images
-
-var index = 0;
-script.background.mainPass.baseTex = script.images[index];
-
-script.createEvent('TapEvent').bind(function() {
-  index += 1;
-  if (index >= script.images.length) {
-    index = 0;
+function init() {
+  for (var i = 0; i < script.numLayers; i++) {
+    var newObj = script.parent.copySceneObject(script.textImage);
+    var imgComp = newObj.getComponent('Component.Image');
+    imgComp.mainMaterial = script.shadowMat;
+    instances.push(newObj);
   }
-  script.background.mainPass.baseTex = script.images[index];
-  print('Tap');
+}
+```
+
+## Offsetting the layers
+
+Now that we have our layers created, we need to offset them. For this step we'll take our instances and then offset them by a small amount behind our Face Image. We are also going to make sure we set their scales, but this is only needed for the autoUpdate flag. In our line of code were we shift the z position, you'll notice that we add 1 to the index. This is to make sure our first layer does not lie on top of our original Face Image.
+
+```javascript
+function position() {
+  for (var i = 0; i < instances.length; i++) {
+    var newObj = instances[i];
+    var transform = script.textImage.getTransform();
+    var pos = transform.getLocalPosition();
+    pos.z = pos.z - (i + 1) * script.offset;
+    newObj.getTransform().setLocalPosition(pos);
+    newObj.getTransform().setLocalScale(transform.getLocalScale());
+  }
+}
+```
+
+## Adding the auto update
+
+We only need to create our layers once when the lens is turned on. However, while editing our lens, it will be helpful to have our 3D effect update as we move and scale our Face Image. For that, we just add an "UpdateEvent" and call our `position` function if the flag is enabled. When you are ready to publish your lens, just turn off the autoUpdate flag. If you forget it won't be the end of the world, but depending on how many other scripts you are running you might start noticing an impact. We'll also go ahead and make our function calls to init() and position() when our script runs.
+
+```javascript
+script.createEvent('UpdateEvent').bind(function() {
+  if (script.autoUpdate) {
+    position();
+  }
+});
+
+init();
+position();
+```
+
+## Customizing the text
+
+Last, but not least, let's take a look at how to programmatically set the text value on the Text Texture. If we were using a Text Component, we would just have to assign our text to the `text` property, but since this is a Text Texture, the `text` property is found inside the `control` property. For this example I'm going to pull the user's display name from the [UserContextSystem](https://lensstudio.snapchat.com/api/classes/UserContextSystem/) and use that for our text value.
+
+```javascript
+global.userContextSystem.requestDisplayName(function(displayName) {
+  print('Hello ' + displayName);
+  script.textTexture.control.text = displayName;
 });
 ```
 
-If our index value ever increases to the length of our images list, we set it back to 0 and we go back through our images. Now if you click in the Preview Panel, you'll jump back to the first image after you get to the last image. Congratulations on making it this far! You are all done scripting!
+## The finished script
 
-The really nice thing about this script is that you can reuse it in other projects. If you have another lens where you need to tap to change the background, you can simply copy the script to your other lens, add it to your scene, and then select the corresponding Screen Image and list of images.
+Here is our finished script.
+
+```javascript
+// -----JS CODE-----
+// @input SceneObject parent
+// @input SceneObject textImage
+// @input Asset.Texture textTexture
+// @input float offset = 0.02
+// @input int numLayers = 50
+// @input Asset.Material shadowMat
+// @input bool autoUpdate
+
+var instances = [];
+
+function init() {
+  for (var i = 0; i < script.numLayers; i++) {
+    var newObj = script.parent.copySceneObject(script.textImage);
+    var imgComp = newObj.getComponent('Component.Image');
+    imgComp.mainMaterial = script.shadowMat;
+    instances.push(newObj);
+  }
+}
+
+function position() {
+  for (var i = 0; i < instances.length; i++) {
+    var newObj = instances[i];
+    var transform = script.textImage.getTransform();
+    var pos = transform.getLocalPosition();
+    pos.z = pos.z - (i + 1) * script.offset;
+    newObj.getTransform().setLocalPosition(pos);
+    newObj.getTransform().setLocalScale(transform.getLocalScale());
+  }
+}
+
+script.createEvent('UpdateEvent').bind(function() {
+  if (script.autoUpdate) {
+    position();
+  }
+});
+
+init();
+position();
+
+global.userContextSystem.requestDisplayName(function(displayName) {
+  print('Hello ' + displayName);
+  script.textTexture.control.text = displayName;
+  // The display name inside of Lens Studio is 'Snap User'
+  // but Snapchat doesn't like the word 'Snap' appearing
+  // in previews. Uncomment the following line, create your
+  // preview, and then comment it back out.
+  // script.textTexture.control.text = 'My Name'
+});
+```
+
+# Configuring your scene
+
+Now that our script is ready, let's get it added to our scene!
+
+## Setup the Text Texture
+
+All you need to do here is set the font and text (if you aren't setting it programmatically) in the Inspector Panel. Leave the color as white because we'll be setting the color on the material.
+
+## Setup the materials
+
+For both the Main and Shadow materials, set the blend mode to `Alpha Test` and the Base Texture to the Text Texture. Choose a base color for the Main material and then a darker version of the same color for the Shadow material. Most of the other settings won't matter for the Shadow material, but feel free to add specular lighting to the Main material if you want. You can also turn on Tone Mapping if you want the material to match your camera lighting a little better.
+
+## Setup the Face Image
+
+Now head on up to the Objects Panel and select the Face Image. Set the material to the Main material you created and you should be good to go. If you just see a solid color, try switching the blend mode between Normal and Alpha Test. Once it looks fine you should be good.
+
+## Add the script
+
+You can add the script to whichever Scene Object you like. I like to add mine to the camera. Once you've added your script, fill in the parameters:
+
+- Head Binding as the Parent
+- Face Image as the Text Image
+- Text Texture as the Text Texture
+- You can adjust the Offset and Num Layers as you see fit
+- Shadow material for the Shadow Mat
+
+At this point you should be seeing your 3D text! If not, make sure there aren't any errors in your script.
 
 # Finishing up
 
-Now all that's left is naming your lens and creating an icon and a preview. Scripting can be daunting for beginners, but even simple scripts can add some pizzazz to your lenses and help them stand apart.
-
 # Further reading
 
+- [ztext](https://bennettfeely.com/ztext/)
 - [Images](https://lensstudio.snapchat.com/guides/2d/image/)
 - [Panels](https://lensstudio.snapchat.com/guides/general/panels/)
-- [Segmentation](https://lensstudio.snapchat.com/guides/general/segmentation/)
+- [Materials](https://lensstudio.snapchat.com/guides/3d/materials/)
+- [UserContextSystem](https://lensstudio.snapchat.com/api/classes/UserContextSystem/)
 - [Scripting](https://lensstudio.snapchat.com/guides/scripting/scripting-overview/)
 - [Lens Studio API](https://lensstudio.snapchat.com/api/)
