@@ -2,6 +2,7 @@
 title: 'Introduction'
 metaTitle: 'Introduction to augmented reality (AR)'
 metaDescription: 'What is augmented reality and why should I care?'
+metaImage: /top-level/introduction_thumbnail.jpg
 ---
 
 What is augmented reality? In short, it is overlaying something digital over the physical world, generally through a phone screen.
