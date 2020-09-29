@@ -42,7 +42,7 @@ const config = {
     description: 'The best way to learn how to create augmented reality lenses and filters',
     ogImage: null,
     docsLocation: 'https://learn.arbootcamp.com',
-    favicon: 'icon.png',
+    favicon: '/icon.png',
   },
   pwa: {
     enabled: false, // disabling this will also remove the existing service worker.
