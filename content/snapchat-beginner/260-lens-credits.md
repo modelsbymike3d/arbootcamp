@@ -67,10 +67,6 @@ A fun example to try would be a `Time` value of 0.3, a `Delay` of 3.0, and an `E
 
 ![Tween script setup for fading out an object after some amount of time](../../snapchat-beginner/credits/tween_script.jpg)
 
-# Finishing up
-
-Now all that's left is naming your lens and creating an icon and a preview. Scripting can be daunting for beginners, but even simple scripts can add some pizzazz to your lenses and help them stand apart.
-
 # Further reading
 
 - [Screen Text](https://lensstudio.snapchat.com/guides/2d/text/)
