@@ -1,7 +1,8 @@
 ---
 title: 'Getting Help'
 metaTitle: 'Getting help'
-metaDescription: 'Need more help? There are lots of great places to turn to'
+metaDescription: 'Need more help? There are lots of great places to turn to.'
+metaImage: /snapchat-beginner/getting_help/help_thumbnail.jpg
 software_version: '3.0'
 author: 'Michael Porter'
 snapchat: 'modelsbymike3d'

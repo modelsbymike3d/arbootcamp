@@ -80,6 +80,8 @@ export default class MDXRuntimeTest extends Component {
 
     let canonicalUrl = config.gatsby.siteUrl;
 
+    const imageUrl = config.gatsby.siteUrl + '/' + metaImage;
+
     canonicalUrl =
       config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
     canonicalUrl = canonicalUrl + mdx.fields.slug;
@@ -92,7 +94,8 @@ export default class MDXRuntimeTest extends Component {
           {metaDescription ? <meta name="description" content={metaDescription} /> : null}
           {metaTitle ? <meta property="og:title" content={metaTitle} /> : null}
           {metaDescription ? <meta property="og:description" content={metaDescription} /> : null}
-          {metaImage ? <meta name="og:image" content={metaImage} /> : null}
+          {metaImage ? <meta property="og:image" content={imageUrl} /> : null}
+          {metaImage && metaTitle ? <meta property="og:image:alt" content={metaTitle} /> : null}
           {metaTitle ? (
             <meta property="og:site_name" content={metaTitle} />
           ) : (
@@ -102,8 +105,8 @@ export default class MDXRuntimeTest extends Component {
           {metaDescription ? (
             <meta property="twitter:description" content={metaDescription} />
           ) : null}
-          {metaImage ? <meta name="twitter:image" content={metaImage} /> : null}
-          {metaImage && metaTitle ? <meta name="twitter:image:alt" content={metaTitle} /> : null}
+          {metaImage ? <meta property="twitter:image" content={imageUrl} /> : null}
+          {metaImage && metaTitle ? <meta property="twitter:image:alt" content={metaTitle} /> : null}
           <link rel="canonical" href={canonicalUrl} />
           <meta property="og:url" content={canonicalUrl} />
         </Helmet>

@@ -2,6 +2,7 @@
 title: 'Lens Credits'
 metaTitle: 'Lens Credits in Lens Studio'
 metaDescription: 'Learn how to add your username to a lens and make it disappear automatically!'
+metaImage: /snapchat-beginner/credits/credits_thumbnail.jpg
 software_version: '3.1'
 author: 'Michael Porter'
 snapchat: 'modelsbymike3d'

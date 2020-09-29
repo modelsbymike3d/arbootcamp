@@ -2,6 +2,7 @@
 title: 'Your First Lens'
 metaTitle: 'Your First Lens'
 metaDescription: "There's no better way to learn lens making than by doing! Get started with Lens Studio by making your very first lens!"
+metaImage: /snapchat-beginner/first_lens/first_lens_thumbnail.jpg
 software_version: '3.0'
 author: 'Michael Porter'
 snapchat: 'modelsbymike3d'

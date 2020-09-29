@@ -2,6 +2,7 @@
 title: 'Virtual Background'
 metaTitle: 'Virtual Background'
 metaDescription: 'Learn how to add a virtual background or green screen effect to your lenses using segmentation!'
+metaImage: /snapchat-beginner/virtual_background/virtual_background_thumbnail.jpg
 software_version: '3.1'
 author: 'Michael Porter'
 snapchat: 'modelsbymike3d'
