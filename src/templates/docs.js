@@ -76,6 +76,8 @@ export default class MDXRuntimeTest extends Component {
 
     const metaDescription = mdx.frontmatter.metaDescription;
 
+    const metaImage = mdx.frontmatter.metaImage;
+
     let canonicalUrl = config.gatsby.siteUrl;
 
     canonicalUrl =
@@ -90,11 +92,20 @@ export default class MDXRuntimeTest extends Component {
           {metaDescription ? <meta name="description" content={metaDescription} /> : null}
           {metaTitle ? <meta property="og:title" content={metaTitle} /> : null}
           {metaDescription ? <meta property="og:description" content={metaDescription} /> : null}
+          {metaImage ? <meta name="og:image" content={metaImage} /> : null}
+          {metaTitle ? (
+            <meta property="og:site_name" content={metaTitle} />
+          ) : (
+            <meta property="og:site_name" content="AR Bootcamp" />
+          )}
           {metaTitle ? <meta property="twitter:title" content={metaTitle} /> : null}
           {metaDescription ? (
             <meta property="twitter:description" content={metaDescription} />
           ) : null}
+          {metaImage ? <meta name="twitter:image" content={metaImage} /> : null}
+          {metaImage && metaTitle ? <meta name="twitter:image:alt" content={metaTitle} /> : null}
           <link rel="canonical" href={canonicalUrl} />
+          <meta property="og:url" content={canonicalUrl} />
         </Helmet>
         <div className={'titleWrapper'}>
           <StyledHeading>{mdx.fields.title}</StyledHeading>
@@ -135,6 +146,7 @@ export const pageQuery = graphql`
       frontmatter {
         metaTitle
         metaDescription
+        metaImage
         author
         homepage
         snapchat

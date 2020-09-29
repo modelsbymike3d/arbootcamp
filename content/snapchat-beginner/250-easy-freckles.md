@@ -2,6 +2,7 @@
 title: 'Easy Freckles'
 metaTitle: 'Easy Freckles in Lens Studio'
 metaDescription: "Learn how to easily add freckles to the user's face using the Face Mesh!"
+metaImage: /snapchat-beginner/easy_freckles/freckles_thumbnail.jpg
 software_version: '3.1'
 author: 'Michael Porter'
 snapchat: 'modelsbymike3d'
