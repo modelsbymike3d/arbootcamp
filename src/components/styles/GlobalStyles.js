@@ -537,7 +537,6 @@ export const baseStyles = injectGlobal`
     display: flex;
     align-items: center;
     padding-bottom: 40px;
-    margin-bottom: 32px;
   }
 
   .gitBtn {

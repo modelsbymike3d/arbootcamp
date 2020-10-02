@@ -3,6 +3,7 @@ title: '3D Text'
 metaTitle: '3D Text in Lens Studio'
 metaDescription: 'Lens Studio does not have native 3D text, but we can still fake the effect with some pretty convincing results! Learn how to use the Text Texture resource and a little scripting to create this effect!'
 metaImage: /snapchat-intermediate/3d-text/3d_text_thumbnail.jpg
+software: 'Lens Studio'
 software_version: '3.1'
 author: 'Michael Porter'
 snapchat: 'modelsbymike3d'

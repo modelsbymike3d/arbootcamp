@@ -8,6 +8,7 @@ import NextPrevious from '../components/NextPrevious';
 import config from '../../config';
 import { StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
 import AuthorInfo from '../components/AuthorInfo';
+import SoftwareVersion from '../components/SoftwareVersion';
 import NotFound from '../components/404';
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
@@ -106,13 +107,21 @@ export default class MDXRuntimeTest extends Component {
             <meta property="twitter:description" content={metaDescription} />
           ) : null}
           {metaImage ? <meta property="twitter:image" content={imageUrl} /> : null}
-          {metaImage && metaTitle ? <meta property="twitter:image:alt" content={metaTitle} /> : null}
+          {metaImage && metaTitle ? (
+            <meta property="twitter:image:alt" content={metaTitle} />
+          ) : null}
           <link rel="canonical" href={canonicalUrl} />
           <meta property="og:url" content={canonicalUrl} />
         </Helmet>
         <div className={'titleWrapper'}>
           <StyledHeading>{mdx.fields.title}</StyledHeading>
         </div>
+        {mdx.frontmatter.software && mdx.frontmatter.software_version ? (
+          <SoftwareVersion
+            software={mdx.frontmatter.software}
+            version={mdx.frontmatter.software_version}
+          />
+        ) : null}
         <AuthorInfo {...mdx.frontmatter} />
         <StyledMainWrapper>
           <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -156,6 +165,8 @@ export const pageQuery = graphql`
         twitter
         instagram
         youtube
+        software
+        software_version
       }
     }
     allMdx {

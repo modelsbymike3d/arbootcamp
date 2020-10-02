@@ -1,7 +1,7 @@
 ---
 title: 'Beginner Lens Studio'
 metaTitle: 'Beginner Lens Studio (Snapchat)'
-metaDescription: 'Getting started created AR effects with Lens Studio for Snapchat'
+metaDescription: 'Get started creating AR effects with Lens Studio for Snapchat'
 metaImage: /top-level/lens_studio_thumbnail.jpg
 ---
 

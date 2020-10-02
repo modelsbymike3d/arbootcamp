@@ -3,6 +3,7 @@ title: 'Intro to Lens Studio'
 metaTitle: 'Introduction to Lens Studio'
 metaDescription: "Lens Studio is Snapchat's tool for creating lenses. It's super powerful and super flexible. While it's been designed to be easy to use, here's a quick overview of how the software is layed out."
 metaImage: /snapchat-beginner/setup/setup_thumbnail.jpg
+software: 'Lens Studio'
 software_version: '3.0'
 author: 'Michael Porter'
 snapchat: 'modelsbymike3d'
