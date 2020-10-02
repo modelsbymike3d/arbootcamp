@@ -24,7 +24,9 @@ homepage: 'https://modelsbymike3d.com'
   ></iframe>
 </div>
 
-In this tutorial we'll go over how to easily create freckles using Spark AR Studio.
+In this tutorial we'll go over how to easily create freckles using Spark AR Studio. You can see an example of this effect [by clicking here](https://www.instagram.com/ar/400573747604073/) or by scanning the below code.
+
+![QR code leading to an example freckles effect for Instagram](../../instagram-beginner/easy_freckles/qr_code.png)
 
 # Creating the freckles
 
