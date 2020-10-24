@@ -221,8 +221,6 @@ You can add the script to whichever Scene Object you like. I like to add mine to
 
 At this point you should be seeing your 3D text! If not, make sure there aren't any errors in your script.
 
-# Finishing up
-
 # Further reading
 
 - [ztext](https://bennettfeely.com/ztext/)
