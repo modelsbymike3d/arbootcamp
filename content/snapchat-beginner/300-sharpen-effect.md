@@ -48,7 +48,7 @@ Now add `Texture 2D Sample`, `Subtract`, `Add`, and `Blend` nodes. The first thi
 
 ![Material setup for the finished sharpen effect](../../snapchat-beginner/sharpen/final-material.jpg)
 
-# Final Thoughts
+# Final thoughts
 
 This sharpen effect is fairly simple to create and add to your lens. Because we added it as a Post Effect, anything you've added to your scene (images, 3D objects, etc.) will be included in the sharpening effect, provided they are above the Post Effect in the Objects Panel (just make sure the post effect is below everything you want sharpened, but not nested inside them). Due to how the Gaussian Blur node works, you'll start to get banding and ghost images if you increase the blur amount too much. If you stick with values of 0.001 for the Pixel Size on the Gaussian Blur node, you should be fine as long as you stay under a Blur Factor of 4.0.
 
