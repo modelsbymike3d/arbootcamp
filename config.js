@@ -2,7 +2,6 @@ const config = {
   gatsby: {
     pathPrefix: '/',
     siteUrl: 'https://learn.arbootcamp.com',
-    gaTrackingId: 'UA-173415966-1',
     trailingSlash: false,
   },
   header: {

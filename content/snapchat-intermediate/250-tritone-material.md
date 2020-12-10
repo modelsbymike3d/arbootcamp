@@ -13,16 +13,7 @@ youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
-<div className="video-responsive">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/2LHhuZPZP9o"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-</div>
+`youtube:2LHhuZPZP9o`
 
 In this tutorial we'll go over how to create a tritone material inside Lens Studio. This material will be configurable, reusable, and will provide a brief introduction to the power of the material editor. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=7cabec2528b14541af005f09caa4ba83&metadata=01) or by scanning the snapcode below.
 

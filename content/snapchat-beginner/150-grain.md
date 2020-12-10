@@ -13,16 +13,7 @@ youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
-<div className="video-responsive">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/q3PtpCixl5k"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-</div>
+`youtube:q3PtpCixl5k`
 
 Grain is a pretty popular addition to many Snapchat lenses. Done right, it can add a vintage look to your lenses. You can preview an effect using grain by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=9bbc641deec14df1a21c9f170b11ce04&metadata=01) or by scanning the snapcode below.
 

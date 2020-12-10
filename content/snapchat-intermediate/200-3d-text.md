@@ -13,16 +13,7 @@ youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
-<div className="video-responsive">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/A2J0Ruf9cHw"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-</div>
+`youtube:A2J0Ruf9cHw`
 
 In this tutorial we'll go over how to create 3D text inside of Lens Studio. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=e8090cbca14843d2875638c04fc605b9&metadata=01) or by scanning the snapcode below.
 

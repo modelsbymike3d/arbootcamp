@@ -13,16 +13,7 @@ youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
-<div className="video-responsive">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/P46w_nIg7OE"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-</div>
+`youtube:P46w_nIg7OE`
 
 In this tutorial we'll go over how to easily create freckles using Spark AR Studio. You can see an example of this effect [by clicking here](https://www.instagram.com/ar/400573747604073/) or by scanning the below code.
 

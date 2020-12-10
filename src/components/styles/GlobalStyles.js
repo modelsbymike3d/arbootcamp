@@ -54,6 +54,36 @@ export const baseStyles = injectGlobal`
   .visibleMobileView {
     display: none !important;
   }
+  .youtube-thumbnail {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  .youtube-thumbnail-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .youtube-thumbnail-overlay {
+    position: absolute;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.4) url(../../icons/playButton.svg) no-repeat center / 100px 100px;
+    width: 100%;
+    height: 99%;
+    top: 0px;
+  }
+  .youtube-thumbnail-text {
+    position: absolute;
+    z-index: 3;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000000AA;
+    color: #FFFFFFAA;
+    width: 100%;
+    font-size: 1.2rem;
+    font-style: italic;
+  }
   .video-responsive {
     position: relative;
     padding-bottom: 56.2%;

@@ -13,16 +13,7 @@ youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
-<div className="video-responsive">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/56vNBmUtt5Q"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-</div>
+`youtube:56vNBmUtt5Q`
 
 For your very first lens we'll be making a face stretch lens. It's easy to get started and you can create some really fun effects. You can preview this effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=62e54d7fb96d47da95ed6b33ce5e0ef8&metadata=01) or by scanning the snapcode below.
 

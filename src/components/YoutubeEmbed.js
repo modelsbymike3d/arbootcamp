@@ -1,6 +1,6 @@
 import React from 'react';
 
-const YoutubeEmbed = ({ link }) => {
+export default function YoutubeEmbed({ link }) {
   return (
     <div className="video-responsive">
       <iframe
@@ -14,6 +14,4 @@ const YoutubeEmbed = ({ link }) => {
       ></iframe>
     </div>
   );
-};
-
-export default YoutubeEmbed;
+}

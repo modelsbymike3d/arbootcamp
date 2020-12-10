@@ -13,16 +13,7 @@ youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
-<div className="video-responsive">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/-p0q9Gk-jpc"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-</div>
+`youtube:-p0q9Gk-jpc`
 
 There are lots of filters simulating vintage cameras by adding grain or by adding a black and white or sepia effect. What's missing is the choppy framerate of old video cameras. In this tutorial you'll learn how to simulate a reduced framerate to take your vintage camera effects to the next level. You can view an example of this effect [by clicking here](https://www.instagram.com/ar/387717252389876/) or by scanning the code below.
 

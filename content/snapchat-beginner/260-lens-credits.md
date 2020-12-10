@@ -13,16 +13,7 @@ youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
-<div className="video-responsive">
-  <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/SqDPwVhznp4"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  ></iframe>
-</div>
+`youtube:SqDPwVhznp4`
 
 In this tutorial we'll go over how to add credits to your lens/filter. Adding credits or a call-to-action to your lens could potentially help you grow your subscriber base or credit another creator with whom you've collaborated, but you don't want it to be obtrusive. Here you'll learn how to fade out the credits after several seconds and also ensure it never shows up while the user is taking a picture or video.
 

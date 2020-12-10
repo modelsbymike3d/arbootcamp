@@ -37,19 +37,22 @@ const plugins = [
         {
           resolve: 'gatsby-remark-copy-linked-files',
         },
+        {
+          resolve: require.resolve(`./plugins/gatsby-youtube-link/index.js`),
+          options: {
+            width: 512,
+            className: `youtube-thumbnail`,
+            title: `Click to watch video on youtube.com`,
+          },
+        },
       ],
       extensions: ['.mdx', '.md'],
     },
   },
   {
-    resolve: `gatsby-plugin-gtag`,
+    resolve: `gatsby-plugin-plausible`,
     options: {
-      // your google analytics tracking id
-      trackingId: config.gatsby.gaTrackingId,
-      // Puts tracking script in the head instead of the body
-      head: true,
-      // enable ip anonymization
-      anonymize: true,
+      domain: `learn.arbootcamp.com`,
     },
   },
 ];
