@@ -10,6 +10,7 @@ import { StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
 import AuthorInfo from '../components/AuthorInfo';
 import SoftwareVersion from '../components/SoftwareVersion';
 import NotFound from '../components/404';
+import Email from '../components/EmailSignup';
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
@@ -33,9 +34,8 @@ export default class MDXRuntimeTest extends Component {
     } = data;
 
     const gitHub = require('../components/images/github.svg');
-
     const navItems = allMdx.edges
-      .map(({ node }) => node.fields.slug)
+      .map(({ node }) => node.fields.sort)
       .filter(slug => slug !== '/')
       .sort()
       .reduce(
@@ -64,9 +64,9 @@ export default class MDXRuntimeTest extends Component {
         return acc.concat(navItems[cur]);
       }, [])
       .concat(navItems.items)
-      .map(slug => {
-        if (slug) {
-          const { node } = allMdx.edges.find(({ node }) => node.fields.slug === slug);
+      .map(sort => {
+        if (sort) {
+          const { node } = allMdx.edges.find(({ node }) => node.fields.sort === sort);
 
           return { title: node.fields.title, url: node.fields.slug };
         }
@@ -126,6 +126,9 @@ export default class MDXRuntimeTest extends Component {
         <StyledMainWrapper>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </StyledMainWrapper>
+        <StyledMainWrapper>
+          <Email />
+        </StyledMainWrapper>
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
         </div>
@@ -147,6 +150,7 @@ export const pageQuery = graphql`
         id
         title
         slug
+        sort
       }
       body
       tableOfContents
@@ -175,6 +179,7 @@ export const pageQuery = graphql`
           fields {
             slug
             title
+            sort
           }
         }
       }

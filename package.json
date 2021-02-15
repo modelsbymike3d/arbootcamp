@@ -17,6 +17,7 @@
     "@styled-icons/foundation": "^10.6.0",
     "@styled-icons/heroicons-solid": "^10.6.0",
     "algoliasearch": "^3.35.1",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "emotion": "^10.0.23",
     "emotion-server": "^10.0.17",
