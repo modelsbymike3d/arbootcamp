@@ -6,5 +6,3 @@ metaImage: /top-level/lens_studio_thumbnail.jpg
 ---
 
 Getting started with Snapchat lenses and Lens studio? You've come to the right place!
-
-Let's get started!

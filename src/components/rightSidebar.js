@@ -15,7 +15,10 @@ const SidebarLayout = ({ location }) => (
               fields {
                 slug
               }
-              tableOfContents
+              headings(depth: h2) {
+                value
+                depth
+              }
             }
           }
         }
@@ -35,15 +38,15 @@ const SidebarLayout = ({ location }) => (
               item.node.fields.slug === location.pathname ||
               config.gatsby.pathPrefix + item.node.fields.slug === location.pathname
             ) {
-              if (item.node.tableOfContents.items) {
-                innerItems = item.node.tableOfContents.items.map((innerItem, index) => {
-                  const itemId = innerItem.title
-                    ? innerItem.title.replace(/\s+/g, '').toLowerCase()
+              if (item.node.headings) {
+                innerItems = item.node.headings.map((innerItem, index) => {
+                  const itemId = innerItem.value
+                    ? innerItem.value.replace(/\s+/g, '').toLowerCase()
                     : '#';
 
                   return (
                     <ListItem key={index} to={`#${itemId}`} level={1}>
-                      {innerItem.title}
+                      {innerItem.value}
                     </ListItem>
                   );
                 });

@@ -6,5 +6,3 @@ metaImage: /top-level/sparkar_thumbnail.jpg
 ---
 
 Ready to level up your Spark AR skills?
-
-Let's get started!

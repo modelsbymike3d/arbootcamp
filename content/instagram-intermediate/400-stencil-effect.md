@@ -1,6 +1,6 @@
 ---
-title: 'Stencil Effect'
-metaTitle: 'Stencil effect in Spark AR'
+title: 'Easy stencil or graffiti effect in Spark AR'
+metaTitle: 'Easy stencil or graffiti effect in Spark AR'
 metaDescription: 'Learn how to create a stencil effect to recreate a wood burning or graffiti effect!'
 metaImage: /instagram-beginner/reduced_framerate/reduced_framerate_thumbnail.jpg
 software: 'Spark AR Studio'
@@ -19,21 +19,21 @@ Layering the camera view on top of a different background results in some cool e
 
 ![QR code leading to an example stencil effect filter for Instagram](../../instagram-intermediate/stencil-effect/qr-code.png)
 
-# Setting up the project
+## Setting up the project
 
 We are going to do everything in the patch editor for this effect, no need to add anything to the scene. This tutorial does assume some familiarity with the patch editor.
 
-## The images
+### The images
 
 The first thing you are going to need is a set of images for the background. In this tutorial I am using some pictures of wood to simulate a wood burning effect, but feel free to use whatever you want. You'll want a simple background, but something more interesting than just a solid color. Paper or wall images could also work well for this. I also recommend getting some sort of noise/grain texture. This is optional, but it will help us blend things in later. Feel free to use the one below:
 
 ![A simple grayscale picture of random noise](../../instagram-intermediate/stencil-effect/noise.jpg)
 
-## The patches
+### The patches
 
 We will mostly be using the built-in patches, but we do need to import a few from the Asset Library. Go ahead and import the `Blue`, `Luminance`, and `TriTone Shader` patches. We also need a `Scene Render Pass` so select the Device in the Scene panel and then create the default render pipeline in the object properties over on the right-hand side of the screen.
 
-# The stencil effect
+## The stencil effect
 
 The basic approach is to convert our image into a black and white version of itself and overlay that over some background. Let's start with the stencil part. To do this, we are going to convert our image to a grayscale version of itself and then use the TriTone patch to threshold that image to just black or white. But, before we do that, I'm going to add a slight blur effect. The reasoning behind the blur is to smooth out some of the detail. We aren't going to add so much blur as to lose definition, but we are going to add enough to take out some of the noisy details.
 
@@ -45,13 +45,13 @@ Now that we have the blur, let's create the main stencil effect! Send the output
 
 ![Creating the basic stencil effect](../../instagram-intermediate/stencil-effect/basic-stencil.jpg)
 
-# The background
+## The background
 
 Now that we have the stencil effect, let's add in our background. If you haven't already, import your background images. Then add some `Screen Tap`, `Counter`, and `Option Picker` patches so the user can cycle through a few different backgrounds. Then add a `Multiply` patch and use the stencil effect as the top input and the background as the bottom input.
 
 ![Overlaying the stencil effect on the background](../../instagram-intermediate/stencil-effect/add-background.jpg)
 
-# Finishing touches
+## Finishing touches
 
 Great! We have our stencil effect, but it is a little harsh looking. Let's blend things together better. To start, head back to the TriTone patch and adjust the shadow color. Brightening it up a little to something like a dark brown helps the background show through. For my example a dark brown works because I am using a wood background, so feel free to adjust the tint to something that works better with whatever background you are using.
 
@@ -67,7 +67,7 @@ Now that we have the noise mixed in with the stencil effect, plug the output of 
 
 ![The final layering of the stencil effect on top of the background images](../../instagram-intermediate/stencil-effect/final-layering.jpg)
 
-# Further reading
+## Further reading
 
 - [Delay Frame Patch](https://sparkar.facebook.com/ar-studio/learn/patch-editor/render-passes/delay-frame)
 - [Shader Render Pass](https://sparkar.facebook.com/ar-studio/learn/patch-editor/render-passes/shader-render-pass)

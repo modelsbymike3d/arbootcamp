@@ -1,6 +1,6 @@
 ---
-title: '3D Text'
-metaTitle: '3D Text in Lens Studio'
+title: 'Create customizable 3D text in Lens Studio'
+metaTitle: 'Create customizable 3D text in Lens Studio'
 metaDescription: 'Lens Studio does not have native 3D text, but we can still fake the effect with some pretty convincing results! Learn how to use the Text Texture resource and a little scripting to create this effect!'
 metaImage: /snapchat-intermediate/3d-text/3d_text_thumbnail.jpg
 software: 'Lens Studio'
@@ -19,17 +19,17 @@ In this tutorial we'll go over how to create 3D text inside of Lens Studio. You 
 
 ![Snapcode for lens with 3D text](../../snapchat-intermediate/3d-text/snapcode.png)
 
-# Inspiration
+## Inspiration
 
 I came across [ztext.js](https://bennettfeely.com/ztext/) the other day and thought it was pretty cool. I noticed that the illusion of depth comes from duplicating the text many times and offsetting the layers. With enough layers, it all runs together and looks continuous. Since Lens Studio doesn't have any actual 3D text, we can use the same technique of multiple layers to fake the effect.
 
-# Setting up the scene
+## Setting up the scene
 
-## Scene Objects
+### Scene Objects
 
 For this effect we are going to start with a blank project. In the [Objects Panel](https://lensstudio.snapchat.com/guides/general/panels/), add a Face Image and then delete the 'Look At' component in the Inspector Panel. The Look At component keeps the image facing the camera square-on, but in our case that will mask our eventual 3D effect.
 
-## Scene Resources
+### Scene Resources
 
 Now let's head on down to the Resources Panel. We need to add the following items:
 
@@ -39,11 +39,11 @@ Now let's head on down to the Resources Panel. We need to add the following item
 - `Script` - Create a new script and name it whatever you want. Our script will be reusable in other projects, so some sort of name like 'text3D' or something might be a good idea.
 - `Font` - This is optional, but go ahead and load in a custom font if you want. Lens Studio has a few built-in fonts, or you can download and import a font of your choice. For this tutorial I am going to use the 'Pacifico' font which is built-in and can be imported directly through the Resources Panel.
 
-# Scripting
+## Scripting
 
 > There are multiple ways to accomplish what we want to do. This method is what works best for me.
 
-## The inputs
+### The inputs
 
 To make our script reusable and customizable, we need a few inputs.
 
@@ -68,7 +68,7 @@ Your script should so far look like this:
 // @input bool autoUpdate
 ```
 
-## Initializing the layers
+### Initializing the layers
 
 Our first order of business will be to create the different layers. We are going to iterate through the number of layers we specify in our script input, copy the Face Image, change the material, and then save it to an array. This block of code will look like the following:
 
@@ -85,7 +85,7 @@ function init() {
 }
 ```
 
-## Offsetting the layers
+### Offsetting the layers
 
 Now that we have our layers created, we need to offset them. For this step we'll take our instances and then offset them by a small amount behind our Face Image. We are also going to make sure we set their scales, but this is only needed for the autoUpdate flag. In our line of code were we shift the z position, you'll notice that we add 1 to the index. This is to make sure our first layer does not lie on top of our original Face Image.
 
@@ -102,7 +102,7 @@ function position() {
 }
 ```
 
-## Adding the auto update
+### Adding the auto update
 
 We only need to create our layers once when the lens is turned on. However, while editing our lens, it will be helpful to have our 3D effect update as we move and scale our Face Image. For that, we just add an "UpdateEvent" and call our `position` function if the flag is enabled. When you are ready to publish your lens, just turn off the autoUpdate flag. If you forget it won't be the end of the world, but depending on how many other scripts you are running you might start noticing an impact. We'll also go ahead and make our function calls to init() and position() when our script runs.
 
@@ -117,7 +117,7 @@ init();
 position();
 ```
 
-## Customizing the text
+### Customizing the text
 
 Last, but not least, let's take a look at how to programmatically set the text value on the Text Texture. If we were using a Text Component, we would just have to assign our text to the `text` property, but since this is a Text Texture, the `text` property is found inside the `control` property. For this example I'm going to pull the user's display name from the [UserContextSystem](https://lensstudio.snapchat.com/api/classes/UserContextSystem/) and use that for our text value.
 
@@ -128,7 +128,7 @@ global.userContextSystem.requestDisplayName(function(displayName) {
 });
 ```
 
-## The finished script
+### The finished script
 
 Here is our finished script.
 
@@ -184,23 +184,23 @@ global.userContextSystem.requestDisplayName(function(displayName) {
 });
 ```
 
-# Configuring your scene
+## Configuring your scene
 
 Now that our script is ready, let's get it added to our scene!
 
-## Setup the Text Texture
+### Setup the Text Texture
 
 All you need to do here is set the font and text (if you aren't setting it programmatically) in the Inspector Panel. Leave the color as white because we'll be setting the color on the material.
 
-## Setup the materials
+### Setup the materials
 
 For both the Main and Shadow materials, set the blend mode to `Alpha Test` and the Base Texture to the Text Texture. Choose a base color for the Main material and then a darker version of the same color for the Shadow material. Most of the other settings won't matter for the Shadow material, but feel free to add specular lighting to the Main material if you want. You can also turn on Tone Mapping if you want the material to match your camera lighting a little better.
 
-## Setup the Face Image
+### Setup the Face Image
 
 Now head on up to the Objects Panel and select the Face Image. Set the material to the Main material you created and you should be good to go. If you just see a solid color, try switching the blend mode between Normal and Alpha Test. Once it looks fine you should be good.
 
-## Add the script
+### Add the script
 
 You can add the script to whichever Scene Object you like. I like to add mine to the camera. Once you've added your script, fill in the parameters:
 
@@ -212,7 +212,7 @@ You can add the script to whichever Scene Object you like. I like to add mine to
 
 At this point you should be seeing your 3D text! If not, make sure there aren't any errors in your script.
 
-# Further reading
+## Further reading
 
 - [ztext](https://bennettfeely.com/ztext/)
 - [Images](https://lensstudio.snapchat.com/guides/2d/image/)

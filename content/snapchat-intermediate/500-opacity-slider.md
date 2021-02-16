@@ -1,6 +1,6 @@
 ---
-title: 'Opacity Slider'
-metaTitle: 'Opacity slider in Lens Studio'
+title: 'Change the opacity of anything with a slider in Lens Studio'
+metaTitle: 'Change the opacity of anything with a slider in Lens Studio'
 metaDescription: 'Learn how to change the opacity of any image or material with a slider as we build a completely reusable script in Lens Studio!'
 metaImage: /snapchat-intermediate/background-blur/thumbnail.jpg
 software: 'Lens Studio'
@@ -19,7 +19,7 @@ Letting the user change the opacity (or alpha) of an image is a pretty common qu
 
 ![Snapcode for lens with adjustable background blur](../../snapchat-intermediate/background-blur/snapcode.png)
 
-# The user interface
+## The user interface
 
 Before we create our script, let's go ahead and get our slider created. We are going to use the extremely handy [Lens Studio User Interface (UI) system](https://lensstudio.snapchat.com/guides/scripting/helper-scripts/user-interface/). Download the zip file, unzip it, and then from inside Lens Studio import the `UI_Widgets.lso` file. This will add a "UI" folder in the Resources Panel and a "\[Place Under Orthographic Camera\]" hierarchy of objects in the Objects Panel. We want our slider visible to the user, but we don't want it visible in the captured image/video. Let's set up a new Render Target to make that happen.
 
@@ -40,11 +40,11 @@ Now that we have our slider visible, it is time to tweak the appearance. We will
 
 ![Modifying the color picker to be a plain slider](../../snapchat-intermediate/opacity-slider/slider-setup.jpg)
 
-# The gameplan
+## The gameplan
 
 Now that we have our slider, let's start controlling stuff with it! We want to be able to control the opacity of images, materials, graph materials, and post effects, and ideally we'll just need one script to worry about. Fortunately, that is very doable with the right setup. Let's get started with the base script and then we'll go in and setup each of the different opacity controllers.
 
-# The base script
+## The base script
 
 The opacity of an image is controlled differently than the opacity of a material. The basic principles are the same, but the script property we use to access each is different (Component.Image vs Asset.Material). Rather than write a different script for each thing we want to control the opacity of, we are going to have one base script that lets us choose what we want to target. To do this we will be making use of the [custom script UI](https://lensstudio.snapchat.com/guides/scripting/custom-script-ui/) from Snapchat (not to be confused with the UI slider we just created). Go ahead and create a new script, add it to your scene, and then open up the Script Editor.
 
@@ -95,7 +95,7 @@ handleChange(script.initialValue);
 script.colorPickerScript.api.setSliderValue(script.initialValue);
 ```
 
-# Image opacity
+## Image opacity
 
 Let's start with adjusting image opacity. Select the original camera in the scene and then add a Screen Image. This should create a new orthographic camera as well. If you don't see the screen image in the Preview Panel, don't worry, we'll take care of that. Go to the Scene Config and drag the Orthographic camera under the original camera. This will make sure the new orthographic camera is rendered before our UI cam is. Next, create a new Screen Image for the UI camera and drag it above the slider UI (also set it to the UI layer). For the image texture choose "Render Target." Basically what we are doing is making sure our lens is all rendered out to the Render Target (which is set for the Capture Target) but then so that we can also see it in our live target we are displaying the Render Target as a screen image on the UI camera.
 
@@ -119,7 +119,7 @@ function handleChange(value) {
 
 If you aren't familiar with a switch statement, it just takes an input and then based on the value executes a different code block (defined inside each case). If there isn't a block of code for the switch input, it executes whatever is inside the default block. For adjusting image opacity, we take our image, get the mainPass, and then adjust the baseColor. The baseColor is like the tint to the image. If it is white, then we just see the image. Otherwise it'll add a color tint. In our case we don't want to tint the color, but we do want to adjust the alpha value. It is pretty simple, but not necessarily well documented (I had to search the forum to find out how to do this). Now on your script in the scene, choose the "image" option, select the screen image, and then start moving the slider. You should see the image opacity changing!
 
-# Post effect strength
+## Post effect strength
 
 We can control the strength of post effects in much the same way. Now, this won't work for all post effects, but it does work for those added from the "Color Correction" menu in the Objects Panel (the LUTs). Add the following snippet of code to the switch statement and give it a try! You'll notice it is basically the same as adjusting image opacity, except we are specifying a post effect for the input rather than an image.
 
@@ -130,7 +130,7 @@ case 'post': {
 }
 ```
 
-# Material opacity
+## Material opacity
 
 We can also control the opacity of materials! Add a material (add a sphere or something to the scene and give it your material). Make sure the material blend mode is set to Normal (it might default to Disabled), add the following code to the switch statement, and then give it a try!
 
@@ -141,7 +141,7 @@ case 'mat': {
 }
 ```
 
-# Graph material opacity
+## Graph material opacity
 
 Now let's get a little more tricky with a Graph Material. We won't adjust the opacity here. Instead we'll adjust the strength of the Gauss Blur post effect, but the exact same method would be used to adjust an opacity parameter for any material you might create with the material editor. Go ahead and add the Gauss Blur post effect.
 
@@ -154,7 +154,7 @@ case 'graph': {
 
 This code is going to look a little different. Instead of accessing the baseColor, we are passing in a custom property. If you hover your mouse over the "Blur Factor" slider for the Gauss Blur material, the little tooltip will name it as "blurFactor." This is the value you would set as the "property" input for our opacity script. If you were creating your own custom graph material with an opacity input, you would simply swap out "blurFactor" for whatever your parameter name is. Since our slider only goes from 0-1, the multiplier allows us to access a greater range, such as 0-5 for the Gauss Blur strength.
 
-# The final script
+## The final script
 
 Here is our final script to give us ultimate control over opacity! It isn't complicated, mostly a lot of choosing the right inputs and then just setting values. But this script is reusable in any project where you want to give the user control over the opacity of an image, color correction, or material.
 
@@ -205,7 +205,7 @@ handleChange(script.initialValue);
 script.colorPickerScript.api.setSliderValue(script.initialValue);
 ```
 
-# Further reading
+## Further reading
 
 - [Post Effect](https://lensstudio.snapchat.com/guides/2d/post-effect/)
 - [Lens Studio UI system](https://lensstudio.snapchat.com/guides/scripting/helper-scripts/user-interface/)

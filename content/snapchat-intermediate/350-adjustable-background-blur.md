@@ -1,6 +1,6 @@
 ---
-title: 'Adjustable Background Blur'
-metaTitle: 'Adjustable background blur (bokeh) in Lens Studio'
+title: 'Create an adjustable background blur/bokeh effect with Lens Studio'
+metaTitle: 'Create an adjustable background blur/bokeh effect with Lens Studio'
 metaDescription: "It's not too hard to add a blurry background to your Snapchat lenses for that portrait effect. But let's take it to the next level and make it adjustable!"
 metaImage: /snapchat-intermediate/background-blur/thumbnail.jpg
 software: 'Lens Studio'
@@ -19,13 +19,13 @@ In this tutorial we'll go over how to add an adjustable background blur (or "bok
 
 ![Snapcode for lens with adjustable background blur](../../snapchat-intermediate/background-blur/snapcode.png)
 
-# Blurring the background
+## Blurring the background
 
-## Adding the blur
+### Adding the blur
 
 Blurring the background might actually be the easiest part of this lens. Start off by adding a "Gauss Blur" [Post Effect](https://lensstudio.snapchat.com/guides/2d/post-effect/) in the Objects Panel. This will make the preview blurry (hooray!) and add a Gauss Blur material to the Resources Panel. If you select this material you can adjust the "Blur Factor" in the Inspector Panel to make the preview more or less blurry.
 
-## Blurring only the background
+### Blurring only the background
 
 So far we have a blur going on, but our subject is also blurry. Add a Screen Image in the Objects panel and a Portrait Background Segmentation Texture in the Resources Panel. Now at this point we could set the texture of the screen image to be the Device Camera Texture and then mask the camera with the segmentation, but that would cause issues if we want to add something like grain or some other overlay to our lens. Instead, we are going to apply the segmentation only to the screen image.
 
@@ -35,7 +35,7 @@ To do this, start by creating a new Unlit material. Select the material and set 
 
 Now select the screen image and set the material to be our unlit material we just finished setting up. The default Stretch Mode of Fit should be fine, but I like to change mine to Stretch just to be safe and make sure the image fills the screen. You may notice that ther person is blurry now instead of the background, so select the Portrait Background Segmentation in the Resources Panel and select the "Invert Mask" option in the Inspector Panel. Now you should be golden! Since the default preview videos have a plain background, I recommend you push the lens to your device so you can really see it in action.
 
-# The user interface components
+## The user interface components
 
 So we have a blurry background, but how blurry should it be? Very blurry, somewhat blurry, or hardly blurry? Instead of guessing, why don't we add some controls and let the user decide!
 
@@ -43,7 +43,7 @@ Instead of reinventing the wheel, let's use the [Lens Studio User Interface (UI)
 
 ![Importing the Lens Studio UI widgets](../../snapchat-intermediate/background-blur/ui-import.jpg)
 
-# Creating a UI render target
+## Creating a UI render target
 
 While we want the user to be able to see and use the slider, we don't want it to appear in the final effect. Fortunately Lens Studio let's us use separate render targets for the live view and for what actually gets captured.
 
@@ -60,7 +60,7 @@ Okay, that was a lot, and while doing all that you may have noticed some buttons
 
 ![Setting up the user interface camera](../../snapchat-intermediate/background-blur/ui-cam-settings.jpg)
 
-# Tweaking the user interface
+## Tweaking the user interface
 
 We want to adjust the strength of the blur, so the only UI widget that we need is the slider. If you expand the "UI Panel" object you can find all the various buttons and whatnot. You can delete everything in there EXCEPT for the "UI Color Picker" (you can leave the hint if you want).
 
@@ -68,7 +68,7 @@ We also want to get rid of the color scale from the slider because we are adjust
 
 ![Setting up the slider widget](../../snapchat-intermediate/background-blur/slider-setup.jpg)
 
-# Connecting the slider to the blur
+## Connecting the slider to the blur
 
 Now we just need to get the slider information into our blur material. If we go back to the [UI widgets page](https://lensstudio.snapchat.com/guides/scripting/helper-scripts/user-interface/) and scroll down, we can find some more information about the color picker slider. Fortunately the Lens Studio team thought this through and created a callback named "onSliderValueChanged" that we can use. If you aren't familiar with a callback, we are telling the script to notify us of any changes. It is like if you call your friend and tell them that you are running late but that you'll let them know if anything changes. If you don't call back, your friend can assume nothing has changed. But if you are now going to miss the party, you call your friend back (hence the name) and let them know. So anytime there is a change to the slider, it will trigger the callback.
 
@@ -120,7 +120,7 @@ The next portion of our script attaches our `changeBlur` function to the callbac
 
 Create a script in the Resources Panel, add it to the scene (make sure it is below the UI Color Picker object because that script has to be initialized before ours), set the inputs, and give it a whirl! You should now be able to control the amount of background blur with the slider!
 
-# Finishing touches
+## Finishing touches
 
 Now that the background blur is working, your lens just requires your finishing touches. Feel free to swap out the textures for the slider background and cursor. If you want to add grain or any sort of overlay, make sure it is placed under the first Orthographic camera and not the UI camera. If you want to use a Post Effect, place it after the Orthographic camera (but before the UI camera) and change the layer to Orthographic. This will apply the post effect to the entire lens without affecting the UI.
 
@@ -128,7 +128,7 @@ Now that the background blur is working, your lens just requires your finishing 
 
 ![Example post effect compatible with the background blur and user interface widgets](../../snapchat-intermediate/background-blur/example-post-effect.jpg)
 
-# Further reading
+## Further reading
 
 - [Post Effect](https://lensstudio.snapchat.com/guides/2d/post-effect/)
 - [Lens Studio UI system](https://lensstudio.snapchat.com/guides/scripting/helper-scripts/user-interface/)

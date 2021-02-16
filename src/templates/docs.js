@@ -11,6 +11,7 @@ import AuthorInfo from '../components/AuthorInfo';
 import SoftwareVersion from '../components/SoftwareVersion';
 import NotFound from '../components/404';
 import Email from '../components/EmailSignup';
+import TutorialList from '../components/TutorialList';
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
@@ -34,6 +35,7 @@ export default class MDXRuntimeTest extends Component {
     } = data;
 
     const gitHub = require('../components/images/github.svg');
+
     const navItems = allMdx.edges
       .map(({ node }) => node.fields.sort)
       .filter(slug => slug !== '/')
@@ -125,6 +127,7 @@ export default class MDXRuntimeTest extends Component {
         <AuthorInfo {...mdx.frontmatter} />
         <StyledMainWrapper>
           <MDXRenderer>{mdx.body}</MDXRenderer>
+          <TutorialList mdx={mdx} />
         </StyledMainWrapper>
         <StyledMainWrapper>
           <Email />

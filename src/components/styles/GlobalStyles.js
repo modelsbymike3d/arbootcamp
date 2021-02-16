@@ -530,10 +530,10 @@ export const baseStyles = injectGlobal`
     color: #fff !important;
   }
   .firstLevel ul li .collapser svg path {
-    fill: ${secondaryColor} !important;
+    fill: black !important;
   }
   .active .collapser > svg > path {
-    fill: ${themeColor} !important;
+    fill: black !important;
   }
 
   .firstLevel ul .item ul .item {
