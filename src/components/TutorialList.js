@@ -36,7 +36,7 @@ const TutorialList = ({ location }) => (
         )
       })
 
-      if (links.length > 0) {
+      if (links.length > 0 && location.pathname !=='/') {
         return (
           <div>
             {`Here's what we'll be covering:`}
