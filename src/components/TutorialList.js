@@ -1,11 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-// import Link from './link';
-import config from '../../config';
-import { Sidebar, ListItem } from './styles/Sidebar';
-
-const TutorialList = () => (
+const TutorialList = ({ location }) => (
   <StaticQuery
     query={graphql`
       query {

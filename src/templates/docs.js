@@ -127,7 +127,7 @@ export default class MDXRuntimeTest extends Component {
         <AuthorInfo {...mdx.frontmatter} />
         <StyledMainWrapper>
           <MDXRenderer>{mdx.body}</MDXRenderer>
-          <TutorialList mdx={mdx} />
+          <TutorialList mdx={mdx} location={this.props.location} />
         </StyledMainWrapper>
         <StyledMainWrapper>
           <Email />

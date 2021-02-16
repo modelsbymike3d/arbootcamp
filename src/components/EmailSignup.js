@@ -9,10 +9,13 @@ const EmailSignup = () => {
   const submitForm = event => {
     event.preventDefault();
     const data = new FormData(event.target);
+
     const payload = Object.fromEntries(data.entries());
+
     const headers = {
       'Content-Type': 'application/json',
     };
+
     axios
       .post('.netlify/functions/subscribe', payload, headers)
       .then(res => {
