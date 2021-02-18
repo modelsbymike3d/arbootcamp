@@ -27,9 +27,10 @@ const config = {
       '/snapchat-beginner',
       '/snapchat-intermediate',
       '/instagram-beginner',
-      '/privacy'
+      '/instagram-intermediate',
+      '/privacy',
     ],
-    collapsedNav: ['/snapchat-intermediate', '/instagram-beginner'],
+    collapsedNav: ['/snapchat-intermediate', '/instagram-beginner', '/instagram-intermediate'],
     links: [
       { text: 'Main Page', link: 'https://arbootcamp.com' },
       { text: 'Lens Studio', link: 'https://lensstudio.snapchat.com/' },

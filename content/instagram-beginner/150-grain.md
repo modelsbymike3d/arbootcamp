@@ -1,6 +1,6 @@
 ---
-title: 'Grain'
-metaTitle: 'Grain'
+title: 'How to add grain to your Instagram and Facebook filters'
+metaTitle: 'How to add grain to your Instagram and Facebook filters'
 metaDescription: 'Film grain is a popular feature of filters, and fortunately it is easy to add to your own using some free resources.'
 metaImage: /instagram-beginner/grain/grain-thumbnail.jpg
 software: 'Spark AR Studio'
@@ -19,19 +19,19 @@ Grain is a pretty popular addition to many Instagram filters. Done right, it can
 
 ![QR code leading to an example freckles effect for Instagram](../../instagram-beginner/grain/qr_code.png)
 
-# Getting grain images
+## Getting grain images
 
 Before we add our grain, we of course need some sort of grain images. For a great source of free grain images, I recommend checking out [Film Composite](https://www.filmcomposite.com/free-film-assets). They have an entire collection of free grain images and videos. Once you find some grain you like, click on the thumbnail to get to the download page. For this particular lens I am going to use film scratch images, but feel free to use whichever type you like. Once you click on the thumbnail, you'll see a larger preview of the grain along with a `Blend Mode` and `Download Free` button. Take not of the blend mode because we'll need that later. Download the image and find some more that match it. If you can only find one grain image you like don't worry, we have a few tricks for generating multiple images from one.
 
-# Formatting the grain
+## Formatting the grain
 
 Using your favorite graphics editor (Photoshop, Affinity Photo, GIMP, etc), create a new image. I would not go above a final resolution of 720x1280 due to file size constraints for Snapchat lenses. Import each of your grain images as a new layer. The more layers you have, the more dynamic and less repetitive your grain will look because each layer will become a separate frame in the animation. Since the grain images we downloaded from Film Composite are much larger than the resolution we chose for our frames, it is pretty easy to supplement our number of frames. Take a layer and scale it down so it still fills the frame. Duplicate the layer and scale, move, and/or flip the layer to make a new, distinct frame. Repeat as many times and for as many layers as desired. Film Composite had six film scratch images, and I duplicated each layer twice to give me a total of 18 frames. Once you have your frames, export each layer as an image. You can do this manually by showing/hiding each layer and exporting, or you can use a more automated route -- here's how to [do it in Photoshop](https://helpx.adobe.com/photoshop/using/export-artboards-layers.html), [in Affinity Photo](https://affinity.help/designer/en-US.lproj/index.html?page=pages/ExportPersona/exportPersona.html?title=Exporting%20using%20Export%20Persona), and [in GIMP](https://khalim19.github.io/gimp-plugin-export-layers/).
 
-# Import into Spark AR
+## Import into Spark AR
 
 Open up Spark AR and start by adding an [Animation Sequence](https://sparkar.facebook.com/ar-studio/learn/articles/animation/2d-texture-animation/#Creating-the-textures) and choose your grain frames as the texture. This will import all the images and construct the animation. Next [add a Canvas](https://sparkar.facebook.com/ar-studio/learn/articles/2D/the-canvas) and then [add a Rectangle](https://sparkar.facebook.com/ar-studio/learn/articles/2D/rectangles#adding-rectangles-to-your-scene) to the Canvas and set its size to `Fill Width` and `Fill Height`. Give your rectangle a material and set it to [Flat shading](https://sparkar.facebook.com/ar-studio/learn/articles/textures-and-materials/flat-material) and select your animation sequence for the texture. Now just set the overlay mode to what Film Composite had listed for the grain images you used. However, you might run into a problem here because materials in Spark AR don't have many blend modes. If you find something that works, awesome! If not, we can manipulate our grain animation a little using the Patch Editor.
 
-# Adjusting the grain animation
+## Adjusting the grain animation
 
 Start by [opening the Patch Editor](https://sparkar.facebook.com/ar-studio/learn/patch-editor#patch-types). It can be a little scary working with patches, but we are only going to be doing super simple stuff here. In the Assets Panel, drag your grain animation into the Patch Editor. This should create an orange patch. Now select your grain material and over in the material settings, click on the little circular arrow next to the Texture option. This should create a yellow patch. If you connect the top output of the orange patch (the RGBA output) to the input of the yellow patch, that is the same as just setting the texture in the material settings. But in our case we want to make some adjustments.
 
@@ -43,7 +43,7 @@ You now have a grain effect!
 
 ![How to connect the patches](../../instagram-beginner/grain/patches.jpg)
 
-# Further reading
+## Further reading
 
 - [Animation Sequence](https://sparkar.facebook.com/ar-studio/learn/articles/animation/2d-texture-animation/#Creating-the-textures)
 - [Canvas](https://sparkar.facebook.com/ar-studio/learn/articles/2D/the-canvas)

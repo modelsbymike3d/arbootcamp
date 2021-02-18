@@ -1,6 +1,6 @@
 ---
-title: 'Reduced Framerate'
-metaTitle: 'Reduced framerate effect in Spark AR'
+title: 'Create an old-fashioned reduced or stuttered framerate in Spark AR'
+metaTitle: 'Create an old-fashioned reduced or stuttered framerate in Spark AR'
 metaDescription: 'Learn how to create a reduced framerate effect to simulate the look of old film cameras!'
 metaImage: /instagram-beginner/reduced_framerate/reduced_framerate_thumbnail.jpg
 software: 'Spark AR Studio'
@@ -19,7 +19,7 @@ There are lots of filters simulating vintage cameras by adding grain or by addin
 
 ![QR code leading to an example reduced framerate effect for Instagram](../../instagram-beginner/grain/qr_code.png)
 
-# Setting up the frame delay
+## Setting up the frame delay
 
 For this example I am going to start with a blank project. Most of our work is going to take place in the Patch Editor, so if you don't have it open already go to View -> Show/Hide Patch Editor. The first thing we need to do is get the Delay Frame patch wired up and working. Fortunately, the official Spark AR docs [have an example setup](https://sparkar.facebook.com/ar-studio/learn/patch-editor/render-passes/shader-render-pass#example) that works perfect for what we are wanting to do. Go ahead and recreate their example.
 
@@ -44,7 +44,7 @@ Since I'm going for a vintage camera effect, I'm going to go ahead and make ever
 
 ![Setting up the Delay Frame patch in Spark AR](../../instagram-beginner/reduced_framerate/initial-patch-setup.jpg)
 
-# Reducing the framerate
+## Reducing the framerate
 
 Okay, now we are ready to switch our Alpha value between 1 and 0 on the Mix patch to create that choppy look. Add a Loop Animation patch and leave the Duration at 1 second. Now add a Multiply patch and connect the Progress output of the Loop Animation to the First Value input of the Multiply patch. Set the Second Value of the Multiply patch to 30. Why are we doing this? Instagram filters run at roughly 30 frames per second. Our Loop Animation takes 1 second to run, and during that 1 second the animation progress goes from 0 to 1. By multiplying the progress by 30, we approximately get what frame of the animation we are on. Now the filters don't run at exactly 30 fps, but this approximation works well enough. Go ahead and also add a Floor patch and connect it after the Multiply patch. This will make sure we are working with integer values. Frame 12.5 doesn't make much sense, but frame 12 does.
 
@@ -60,23 +60,23 @@ You can adjust the choppiness by adjusting the Second Value of the Modulo patch.
 
 ![Setting up the framerate adjustment in Spark AR](../../instagram-beginner/reduced_framerate/framerate-modulation.jpg)
 
-# Final touches
+## Final touches
 
 We already added a black and white effect, but let's add some grain as a final touch. We already have a [tutorial on how to add grain](https://learn.arbootcamp.com/instagram-beginner/grain), so here we are going to skip that part and instead focus on syncing the grain with our framerate. The grain doesn't have to be synced with the framerate, but it gives a more authentic feel if the two are synced.
 
-## Adding a Scene Render Pass
+### Adding a Scene Render Pass
 
 If you add a Rectangle and apply your grain material, you might notice it doesn't show up in the simulator. That is because we are grabbing the camera texture and applying our effect to that. To include our grain, we'll need to add a Scene Render Pass. Select the Device in the Scene Panel and then on the right-hand side of the screen click on the `Create` button next to Default Pipeline. This will add a purple Device patch and a Scene Render Pass patch. Connect the Shader Render Pass to the Background input of the Scene Render Pass, and connect the output of the Scene Render Pass to the Texture input of the Adjust Colors Shader patch instead of the second Receiver patch (you can delete that Receiver patch now). Your grain should now be visible in the simulator.
 
 ![Adding the Scene Render Pass in Spark AR](../../instagram-beginner/reduced_framerate/scene-render-pass.jpg)
 
-## Syncing the grain with the framerate
+### Syncing the grain with the framerate
 
 If you set the Second Value on the Modulo patch to 15, you'll see that your grain sequence is playing independently of the frame updates. Select the Animation Sequence in the Assets Panel and create a patch for the Current Frame by clicking the little arrow next to the property in the right-hand panel. Add a Counter patch and connect it to the animationSequence0 patch. Set the Mximum Count to the number of frames in the grain animation, and then connect the output of the Equals patch to the Increase input of the Counter. Spark will automatically add a Pulse patch in between. Now your grain animation is synced to the framerate of your filter! Feel free to set the modulo value back to whatever suits your fancy.
 
 ![Syncing the grain with the frame update in Spark AR](../../instagram-beginner/reduced_framerate/grain-sync.jpg)
 
-# Further reading
+## Further reading
 
 - [Delay Frame Patch](https://sparkar.facebook.com/ar-studio/learn/patch-editor/render-passes/delay-frame)
 - [Shader Render Pass](https://sparkar.facebook.com/ar-studio/learn/patch-editor/render-passes/shader-render-pass)

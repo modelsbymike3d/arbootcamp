@@ -18,7 +18,7 @@ const lightTheme = {
 const darkTheme = {
   ...baseTheme,
   colors: {
-    background: '#010110',
+    background: '#202020',
     heading: '#fff',
     text: '#efefef',
     preFormattedText: '#000',

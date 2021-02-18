@@ -1,6 +1,6 @@
 ---
-title: 'Potato Boss Style'
-metaTitle: 'Potato Boss style lens in Lens Studio'
+title: 'Make your own Potato Boss style lens for Snapchat and Snap Camera'
+metaTitle: 'Make your own Potato Boss style lens for Snapchat and Snap Camera'
 metaDescription: 'Create your very own "Potato Boss" style lens using Lens Studio! Move beyond rigid 3D objects and learn how to add a little more motion and life to your creations!'
 metaImage: /snapchat-intermediate/potato-boss/thumbnail.jpg
 software: 'Lens Studio'
@@ -19,13 +19,13 @@ In this tutorial we'll go over how to create a "Potato Boss" style lens using Le
 
 ![Snapcode for peanut lens](../../snapchat-intermediate/potato-boss/snapcode.png)
 
-# Background
+## Background
 
 The Potato lens was created by [Phil Walton](https://lensstudio.snapchat.com/creator/RZEkhB4Nnh7d6lz_-anLQQ) and it went mega-viral after someone shared a picture on Twitter of their [boss who got stuck as the potato](https://time.com/5813683/boss-turns-herself-into-a-potato/) during a work call. That turned the Potato into a cultural phenomenon. Phil's Banana lens, which is the same style of lens as the Potato, was [used on SNL](https://www.youtube.com/watch?v=KYGDEDrrJj0). He unfortunately never received a shout-out from either the original meme nor from SNL, so let's show him some love and go [subscribe to him on Snapchat](https://story.snapchat.com/u/phillip.walton) at the very least.
 
 > This style of lens is a signature look of Phil, so I asked him if it would be okay to make a tutorial about recreating the effect. Being the nice guy that he is, he said yes.
 
-# Preparing your assets
+## Preparing your assets
 
 You don't need much to create this type of lens. The two main ingredients are a background image of some sort and a 3D model. The 3D model can be as simple or complex as you like, the only condition is that it has some sort of rig. For my lens I am going to use a model of a peanut that I found. For the rig I added only two bones - the main root bone is at the top of the model and my second bone (the one I want to control the wobble with) is at the bottom of the model. If you haven't rigged before, feel free to look up a tutorial for whatever 3D software you are using. As you can see you don't need a complicated rig, so the setup should be pretty easy.
 
@@ -33,7 +33,7 @@ You don't need much to create this type of lens. The two main ingredients are a 
 
 ![Example rig setup](../../snapchat-intermediate/potato-boss/rig.jpg)
 
-# Setting up the scene
+## Setting up the scene
 
 Once you have your assets ready, open up Lens Studio. Start off by importing your 3D model and background image. Then add a [Head Binding](https://lensstudio.snapchat.com/guides/face/face-effects/head-attached-3d-objects/), delete the Face Occluder, and attach your 3D model to the Head Binding. Scale and position your model as needed.
 
@@ -45,7 +45,7 @@ When you add a face inset, a new Face Inset Binding is created and the face inse
 
 ![Adding your model to the scene](../../snapchat-intermediate/potato-boss/face-insets.jpg)
 
-# Adding the wobble
+## Adding the wobble
 
 So far we have our 3D model with the face setup, but it wouldn't be a Potato Boss style lens without some of that wobble/lagging motion on part of the model. Fortunately for us, a script already exists for that. There is a collection of projects, templates, and scripts maintained by some of the lens creator community on GitHub. You can [find the script there](https://github.com/FrozenAtlas/OLC-Repo/blob/master/Projects%20and%20Templates/SmoothFollow/Public/SmoothFollow.js), or I've also included it below:
 
@@ -90,7 +90,7 @@ The reason for this is that the bone with the SmoothFollow script is already a c
 
 ![Changing the parent of the bone which has the SmoothFollow script](../../snapchat-intermediate/potato-boss/bone-hierarchy.jpg)
 
-# Adding the background
+## Adding the background
 
 All the hard work is now done. We have our 3D model with the face and the wobbly motion. But, it doesn't necessarily look great just being overlayed on our face. Let's add in a fun background.
 
@@ -102,7 +102,7 @@ To make sure our background is behind our 3D model rather than in front of it, w
 
 ![Camera settings for a custom Input texture](../../snapchat-intermediate/potato-boss/camera-settings.jpg)
 
-# Bonus - Adding a greenscreen
+## Bonus - Adding a greenscreen
 
 Our custom background will usually do the trick, but video conferencing software like Zoom often have greenscreen features. Let's add a greenscreen to our lens to let users customize their background during Zoom calls.
 
@@ -117,11 +117,11 @@ Now when the user taps, it will toggle between the custom background and the gre
 
 ![Configuring the Behavior script to toggle between the two background](../../snapchat-intermediate/potato-boss/background-toggle.jpg)
 
-# Finishing up
+## Finishing up
 
 All that's left now is submitting your lens! As evidenced by Phil's lenses, this style of lens is popular across both Snapchat and Snap Camera. There's no guarantee your lens will be the next Potato Boss, but in my experience they usually do pretty well. Have fun building!
 
-# Further reading
+## Further reading
 
 - [Panels](https://lensstudio.snapchat.com/guides/general/panels/)
 - [Face Inset](https://lensstudio.snapchat.com/guides/face/face-effects/face-inset/)

@@ -194,6 +194,31 @@ export const baseStyles = injectGlobal`
   .formElement svg path {
     fill: #000;
   }
+  .form-input {
+    background-color: rgba(255,255,255,1) !important;
+    border-width: 0 !important;
+    color: #C2C2C2;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000;
+    opacity: 1;
+    font-size: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 12px;
+  }
+  .submit-button {
+    font-size: 20px;
+    padding: 4px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: ${themeColor};
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
   .searchInput {
     width: 100%;
     background-color: rgba(255,255,255,1) !important;
@@ -505,10 +530,10 @@ export const baseStyles = injectGlobal`
     color: #fff !important;
   }
   .firstLevel ul li .collapser svg path {
-    fill: ${themeColor} !important;
+    fill: black !important;
   }
   .active .collapser > svg > path {
-    fill: ${themeColor} !important;
+    fill: black !important;
   }
 
   .firstLevel ul .item ul .item {
