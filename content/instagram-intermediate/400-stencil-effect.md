@@ -2,7 +2,7 @@
 title: 'Easy stencil or graffiti effect in Spark AR'
 metaTitle: 'Easy stencil or graffiti effect in Spark AR'
 metaDescription: 'Learn how to create a stencil effect to recreate a wood burning or graffiti effect!'
-metaImage: /instagram-beginner/reduced_framerate/reduced_framerate_thumbnail.jpg
+metaImage: /instagram-intermediate/stencil-effect/thumbnail.jpg
 software: 'Spark AR Studio'
 software_version: 'v105'
 author: 'Michael Porter'
@@ -13,7 +13,7 @@ youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
-`youtube:-p0q9Gk-jpc`
+`youtube:U60CECzzneE`
 
 Layering the camera view on top of a different background results in some cool effects. With just a little setup, you can create some cool stencil effect lenses to recreate a wood burning type effect. You can view an example of this type of filter [by clicking here](https://www.instagram.com/ar/884709542295899/) or by scanning the code below.
 
@@ -25,7 +25,7 @@ We are going to do everything in the patch editor for this effect, no need to ad
 
 ### The images
 
-The first thing you are going to need is a set of images for the background. In this tutorial I am using some pictures of wood to simulate a wood burning effect, but feel free to use whatever you want. You'll want a simple background, but something more interesting than just a solid color. Paper or wall images could also work well for this. I also recommend getting some sort of noise/grain texture. This is optional, but it will help us blend things in later. Feel free to use the one below:
+The first thing you are going to need is a set of images for the background. In this tutorial I am using some pictures of wood to simulate a wood burning effect, but feel free to use whatever you want. You'll want a simple background, but something more interesting than just a solid color. Paper or wall images could also work well for this. I also recommend getting some sort of noise/grain texture. This is optional, but it will help us blend things in later. Feel free to use the one below (released under a [CC-0 license](https://creativecommons.org/share-your-work/public-domain/cc0/) - feel free to use however you want):
 
 ![A simple grayscale picture of random noise](../../instagram-intermediate/stencil-effect/noise.jpg)
 
@@ -69,6 +69,5 @@ Now that we have the noise mixed in with the stencil effect, plug the output of 
 
 ## Further reading
 
-- [Delay Frame Patch](https://sparkar.facebook.com/ar-studio/learn/patch-editor/render-passes/delay-frame)
 - [Shader Render Pass](https://sparkar.facebook.com/ar-studio/learn/patch-editor/render-passes/shader-render-pass)
 - [Scene Render Pass](https://sparkar.facebook.com/ar-studio/learn/patch-editor/render-passes/scene-render-pass)

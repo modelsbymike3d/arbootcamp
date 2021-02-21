@@ -1,8 +1,8 @@
 ---
-title: 'Change the opacity of anything with a slider in Lens Studio'
-metaTitle: 'Change the opacity of anything with a slider in Lens Studio'
-metaDescription: 'Learn how to change the opacity of any image or material with a slider as we build a completely reusable script in Lens Studio!'
-metaImage: /snapchat-intermediate/background-blur/thumbnail.jpg
+title: 'Change the opacity of an image, color correction, or material with a slider in Lens Studio'
+metaTitle: 'Change the opacity of an image, color correction, or material with a slider in Lens Studio'
+metaDescription: 'Learn how to change the opacity of any image or color correction or material with a slider as we build a completely reusable script in Lens Studio!'
+metaImage: /snapchat-intermediate/opacity-slider/thumbnail.jpg
 software: 'Lens Studio'
 software_version: '3.3.3'
 author: 'Michael Porter'
@@ -13,11 +13,11 @@ youtube: 'https://www.youtube.com/channel/UCpLVNOoqAc3cnd_QgSxoAvg'
 homepage: 'https://modelsbymike3d.com'
 ---
 
-`youtube:dNAj1iyy-ew`
+`youtube:DOporB-Eukg`
 
-Letting the user change the opacity (or alpha) of an image is a pretty common question on the Lens Studio forums. Changing the opacity of an image itself isn't too tricky, but knowing how to do it with a script so the user can control it is a bit trickier. We'll walk through the whole process and end up with a fully reusable script for future projects. You can see an example of this type of effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=fad8f8091cda47cb942aa385e6da588c&metadata=01) or by scanning the snapcode below.
+Letting the user change the opacity (or alpha) of an image is a pretty common question on the Lens Studio forums. Changing the opacity of an image itself isn't too tricky, but knowing how to do it with a slider so the user can control it is a bit trickier. We'll walk through the whole process and end up with a fully reusable script for future projects. You can see an example of this type of effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=5ea980b84abc43a3a6c1b36aa427e55a&metadata=01) or by scanning the snapcode below.
 
-![Snapcode for lens with adjustable background blur](../../snapchat-intermediate/background-blur/snapcode.png)
+![Snapcode for lens with adjustable background blur](../../snapchat-intermediate/opacity-slider/snapcode.png)
 
 ## The user interface
 
@@ -54,7 +54,7 @@ To start off, we are going to create a dropdown menu so we can choose what entit
 // @input string entity {"widget":"combobox", "values":[{"label":"Image", "value":"image"}, {"label":"Post Effect", "value":"post"}, {"label":"Material", "value":"mat"}, {"label":"Graph Material", "value":"graph"}]}
 ```
 
-Our first line of code will be this long line for the `entity`. The first part `@input string entity` probably looks pretty normal. The next part might be new though. This is a JSON object that specifies what sort of script UI to show. The "combobox" is essentially a dropdown menu and the "values" are what get displayed. Each item in the list has a "label" which is displayed inside Lens Studio and a "value" which corresponds to what the value of the input is. Add this line to your script, save it, and then you should see the dropdown menu showing up. What's really cool about this is that we can conditionally display other script inputs based on what is chosen in this dropdown.
+Our first line of code will be this long line for the `entity`. The first part `@input string entity` probably looks pretty normal. The next part might be new though. This is a JSON object that specifies what sort of [script UI](https://lensstudio.snapchat.com/guides/scripting/custom-script-ui/) to show. The "combobox" is essentially a dropdown menu and the "values" are what get displayed. Each item in the list has a "label" which is displayed inside Lens Studio and a "value" which corresponds to what the value of the input is. Add this line to your script, save it, and then you should see the dropdown menu showing up. What's really cool about this is that we can conditionally display other script inputs based on what is chosen in this dropdown.
 
 ```javascript
 // @input Component.Image image {"showIf":"entity", "showIfValue":"image"}
@@ -136,7 +136,8 @@ We can also control the opacity of materials! Add a material (add a sphere or so
 
 ```javascript
 case 'mat': {
-    script.mat.mainPass.baseColor = new vec4(1, 1, 1, value);
+    var currColor = script.mat.mainPass.baseColor;
+    script.mat.mainPass.baseColor = new vec4(currColor.r, currColor.g, currColor.b, value);
     break;
 }
 ```
@@ -187,7 +188,8 @@ function handleChange(value) {
       break;
     }
     case 'mat': {
-      script.mat.mainPass.baseColor = new vec4(1, 1, 1, value);
+      var currColor = script.mat.mainPass.baseColor;
+      script.mat.mainPass.baseColor = new vec4(currColor.r, currColor.g, currColor.b, value);
       break;
     }
     case 'graph': {
@@ -207,6 +209,7 @@ script.colorPickerScript.api.setSliderValue(script.initialValue);
 
 ## Further reading
 
+- [Custom Script UI](https://lensstudio.snapchat.com/guides/scripting/custom-script-ui/)
 - [Post Effect](https://lensstudio.snapchat.com/guides/2d/post-effect/)
 - [Lens Studio UI system](https://lensstudio.snapchat.com/guides/scripting/helper-scripts/user-interface/)
 - [Camera Layers](https://lensstudio.snapchat.com/guides/general/camera/)
