@@ -26,11 +26,17 @@ const config = {
       '/introduction', // add trailing slash if enabled above
       '/snapchat-beginner',
       '/snapchat-intermediate',
+      '/snapchat-advanced',
       '/instagram-beginner',
       '/instagram-intermediate',
       '/privacy',
     ],
-    collapsedNav: ['/snapchat-intermediate', '/instagram-beginner', '/instagram-intermediate'],
+    collapsedNav: [
+      '/snapchat-intermediate',
+      '/snapchat-advanced',
+      '/instagram-beginner',
+      '/instagram-intermediate',
+    ],
     links: [
       { text: 'Main Page', link: 'https://arbootcamp.com' },
       { text: 'Lens Studio', link: 'https://lensstudio.snapchat.com/' },
