@@ -77,7 +77,7 @@ Now that we have our script and touch components added to our first choice, go a
 
 Now that we have our base UI and scripts created, it's almost time for the actual clones! We'll use our script to create the clones, but before we can do that we need a place to display the clones. Deselect everything in the objects panel (you can click in a blank space in the objects panel to do so) and add a new Screen Image. This should add a new orthographic camera as well. Alternatively you can add a new camera/screen image manually. I'm going to rename this camera to "Clone Cam" to help stay organized. I'll also drag it above the other orthographic camera (the one for the UI) and then make sure it is rendered before the UI render target in the scene config by dragging it up by the original camera. This helps me keep track of everything a little better.
 
-![Finished UI setup for the options for the number of clones to create](../../snapchat-advanced/clone/camera-ordering.jpg)
+![Creating and ordering the multiple cameras](../../snapchat-advanced/clone/camera-ordering.jpg)
 
 Make sure the Full Frame Region is set to "Full Frame," set your image stretch mode to "Stretch," and then rename the screen image to "1" or something. This will be where our first clone goes. Go ahead and copy that screen image so that you have enough for all the potential clones (in this case, we want five total). Then copy it once more and rename this one to "Overlay." The preview panel should now be covered by the placeholder images, but we'll take care of that soon.
 
