@@ -37,11 +37,11 @@ const EmailSignup = () => {
   return (
     <div>
       <div className="email-signup">
-        <h2>Stay in the loop</h2>
+        <h2>Keep learning!</h2>
         <p></p>
         <p className="text-left">
-          Do you like building Snapchat lenses and Instagram filters? Sign up
-          for my newsletter! What's included?
+          Do you like building Snapchat lenses and Instagram filters? Sign up for my newsletter!
+          What's included?
         </p>
         <ul>
           <li>Filter trends</li>
@@ -50,9 +50,8 @@ const EmailSignup = () => {
           <li>Tutorials</li>
         </ul>
         <p className="text-left">
-          I promise not to spam with you with things like "shoutout for
-          shoutout" requests. At most I'll send something out weekly, but it'll
-          probably be closer to one or two times a month.
+          I promise not to spam with you with things like "shoutout for shoutout" requests. At most
+          I'll send something out weekly, but it'll probably be closer to one or two times a month.
         </p>
         <p></p>
       </div>
@@ -78,7 +77,7 @@ const EmailSignup = () => {
         <div className="ml-form-embedPermissions">
           <div className="ml-form-embedPermissionsContent horizontal privacy-policy">
             <p>
-              You can unsubscribe anytime. For more details, review our{" "}
+              You can unsubscribe anytime. For more details, review our{' '}
               <a href="https://arbootcamp.com/privacy">Privacy Policy</a>.
             </p>
           </div>

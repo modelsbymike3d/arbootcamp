@@ -32,6 +32,7 @@ const config = {
       '/privacy',
     ],
     collapsedNav: [
+      '/snapchat-beginner',
       '/snapchat-intermediate',
       '/snapchat-advanced',
       '/instagram-beginner',
@@ -41,6 +42,8 @@ const config = {
       { text: 'Main Page', link: 'https://arbootcamp.com' },
       { text: 'Lens Studio', link: 'https://lensstudio.snapchat.com/' },
       { text: 'Spark AR', link: 'https://sparkar.facebook.com/ar-studio/' },
+      { text: 'Support Me', link: 'https://www.patreon.com/ModelsByMike' },
+      { text: 'Buy Me a Coffee', link: 'https://www.buymeacoffee.com/modelsbymike3d' },
     ],
     frontline: false,
     ignoreIndex: true,
