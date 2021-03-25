@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:DOporB-Eukg`
 
-Letting the user change the opacity (or alpha) of an image is a pretty common question on the Lens Studio forums. Changing the opacity of an image itself isn't too tricky, but knowing how to do it with a slider so the user can control it is a bit trickier. We'll walk through the whole process and end up with a fully reusable script for future projects. You can see an example of this type of effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=5ea980b84abc43a3a6c1b36aa427e55a&metadata=01) or by scanning the snapcode below.
+Letting the user change the opacity (or alpha) of an image is a pretty common question on the Lens Studio forums. Changing the opacity of an image itself isn't too tricky, but knowing how to do it with a slider so the user can control it is a bit trickier. In this tutorial we'll walk through the whole process and end up with a fully reusable script for future projects. You can see an example of this type of effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=5ea980b84abc43a3a6c1b36aa427e55a&metadata=01) or by scanning the snapcode below.
 
 ![Snapcode for lens with adjustable background blur](../../snapchat-intermediate/opacity-slider/snapcode.png)
 

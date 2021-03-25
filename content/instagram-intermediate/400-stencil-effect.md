@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:U60CECzzneE`
 
-Layering the camera view on top of a different background results in some cool effects. With just a little setup, you can create some cool stencil effect lenses to recreate a wood burning type effect. You can view an example of this type of filter [by clicking here](https://www.instagram.com/ar/884709542295899/) or by scanning the code below.
+Layering the camera view on top of a different background results in some cool effects. With just a little setup, you can create some cool stencil effect lenses to recreate a wood burning type effect. This tutorial will go over everything you need to know. You can view an example of this type of filter [by clicking here](https://www.instagram.com/ar/884709542295899/) or by scanning the code below.
 
 ![QR code leading to an example stencil effect filter for Instagram](../../instagram-intermediate/stencil-effect/qr-code.png)
 

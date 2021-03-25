@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:2CM9OhlD6Ik`
 
-If you have spent any time at all on Snapchat Spotlight, then you have seen the [Screen Scanner Pro](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=9254193def06435bb9731a174ead43ab&metadata=01)/Time Warp/Slit Scan lens in action. This seemingly advanced lens is actually super easy to make, you just need to make one small tweak. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=154cf2dfd5c4494ea5ae26fa30a835f7&metadata=01) or by scanning the snapcode below.
+If you have spent any time at all on Snapchat Spotlight, then you have seen the [Screen Scanner Pro](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=9254193def06435bb9731a174ead43ab&metadata=01)/Time Warp/Slit Scan lens in action. This seemingly advanced lens is actually super easy to make, you just need to make one small tweak. We'll go over everything you need to know in this Lens Studio tutorial. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=154cf2dfd5c4494ea5ae26fa30a835f7&metadata=01) or by scanning the snapcode below.
 
 ![Snapcode for lens with 3D text](../../snapchat-intermediate/time-warp/snapcode.png)
 

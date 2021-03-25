@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:u31vRoG3uns`
 
-Grain is a pretty popular addition to many Instagram filters. Done right, it can add a vintage look to your filter. You can see an example of this effect in action [by clicking here](https://www.instagram.com/ar/387717252389876/) or by scanning the below code.
+Grain is a pretty popular addition to many Instagram filters. Done right, it can add a vintage look to your filter. In this Spark AR tutorial, you will learn how to add grain to your Instagram and Facebook filters. You can see an example of this effect in action [by clicking here](https://www.instagram.com/ar/387717252389876/) or by scanning the below code.
 
 ![QR code leading to an example freckles effect for Instagram](../../instagram-beginner/grain/qr_code.png)
 

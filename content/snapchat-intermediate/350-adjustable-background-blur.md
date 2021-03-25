@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:dNAj1iyy-ew`
 
-In this tutorial we'll go over how to add an adjustable background blur (or "bokeh" as it is sometimes called, although it technically isn't bokeh in our case) to a lens. We'll go over how to apply the blur to just the background, add a slider to let the user adjust the strength of the blur, as well as how you can layer post effects on top of the completed lens. You can see an example of this type of effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=fad8f8091cda47cb942aa385e6da588c&metadata=01) or by scanning the snapcode below.
+In this Lens Studio tutorial we'll go over how to add an adjustable background blur (or "bokeh" as it is sometimes called, although it technically isn't bokeh in our case) to a lens. We'll go over how to apply the blur to just the background, add a slider to let the user adjust the strength of the blur, as well as how you can layer post effects on top of the completed lens. You can see an example of this type of effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=fad8f8091cda47cb942aa385e6da588c&metadata=01) or by scanning the snapcode below.
 
 ![Snapcode for lens with adjustable background blur](../../snapchat-intermediate/background-blur/snapcode.png)
 

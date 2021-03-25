@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:6eIlx8EAxwY`
 
-Chain, or swing, physics can breathe a lot of life into your creations. With the proper setup, chain physics automatically adds swinging motion to elements of your lens. This can remove rigidity from objects in your scene and give everything a more organic feel. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=87fb00b83f5c4d85a691ee5a2bbe4e79&metadata=01) or by scanning the snapcode below.
+Chain, or swing, physics can breathe a lot of life into your creations. With the proper setup, chain physics automatically adds swinging motion to elements of your lens. This can remove rigidity from objects in your scene and give everything a more organic feel. In this Lens Studio tutorial we will go over everything you need to know to add chain physics to your own lenses. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=87fb00b83f5c4d85a691ee5a2bbe4e79&metadata=01) or by scanning the snapcode below.
 
 ![Snapcode for lens with 3D text](../../snapchat-advanced/chain-physics/snapcode.png)
 

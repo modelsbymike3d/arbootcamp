@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:-p0q9Gk-jpc`
 
-There are lots of filters simulating vintage cameras by adding grain or by adding a black and white or sepia effect. What's missing is the choppy framerate of old video cameras. In this tutorial you'll learn how to simulate a reduced framerate to take your vintage camera effects to the next level. You can view an example of this effect [by clicking here](https://www.instagram.com/ar/387717252389876/) or by scanning the code below.
+There are lots of filters simulating vintage cameras by adding grain or by adding a black and white or sepia effect. What's missing is the choppy framerate of old video cameras. In this Spark AR tutorial you'll learn how to simulate a reduced framerate to take your vintage camera effects to the next level. You can view an example of this effect [by clicking here](https://www.instagram.com/ar/387717252389876/) or by scanning the code below.
 
 ![QR code leading to an example reduced framerate effect for Instagram](../../instagram-beginner/grain/qr_code.png)
 

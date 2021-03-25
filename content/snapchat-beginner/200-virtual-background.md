@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:FzHGZmdg9bE`
 
-In this tutorial we'll go over how to create a virtual background or green screen effect. You can preview this effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=2e313553d72344058cefe02ba6f3b4ec&metadata=01) or by scanning the snapcode below.
+In this Lens Studio tutorial we'll go over how to create a virtual background or green screen effect for your Snapchat lenses. You can preview this effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=2e313553d72344058cefe02ba6f3b4ec&metadata=01) or by scanning the snapcode below.
 
 ![Snapcode for example virtual background lens](../../snapchat-beginner/virtual_background/snapcode.png)
 

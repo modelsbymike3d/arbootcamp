@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:mVnml1j_XlM`
 
-Text components and screen text are well known features of Lens Studio. The text texture, however, is lesser known but is a super powerful feature. With the text texture, you can add dynamic text directly to the surface of a 3D object. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=7a5cfc849edd49e3ba43d099b44746dc&metadata=01) or by scanning the snapcode below.
+Text components and screen text are well known features of Lens Studio. The text texture, however, is lesser known but is a super powerful feature. With the text texture, you can add dynamic text directly to the surface of a 3D object and this tutorial will show you how. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=7a5cfc849edd49e3ba43d099b44746dc&metadata=01) or by scanning the snapcode below.
 
 ![Snapcode for lens with 3D text](../../snapchat-advanced/text-texture/snapcode.png)
 

@@ -15,7 +15,7 @@ homepage: 'https://modelsbymike3d.com'
 
 `youtube:69XAmkXiL6U`
 
-The more the merrier. More is always better. These wise words of wisdom have been handed down for generations, and now you can bring them to pass inside Snapchat. Here you will learn how to exactly recreate my viral cloning lens. Just make sure you change it up a bit so we don't get caught ;) The key to this effect is the new full-body segmentation which was recently introduced in Lens Studio 3.4 along with a little scripting. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=6eadcd01503341e88c7e710eea02095c&metadata=01) or by scanning the snapcode below.
+The more the merrier. More is always better. These wise words of wisdom have been handed down for generations, and now you can bring them to pass inside Snapchat. Here in this tutorial you will learn how to exactly recreate my viral cloning lens. Just make sure you change it up a bit so we don't get caught ;) The key to this effect is the new full-body segmentation which was recently introduced in Lens Studio 3.4 along with a little scripting. You can see an example of this by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=6eadcd01503341e88c7e710eea02095c&metadata=01) or by scanning the snapcode below.
 
 ![Snapcode for lens with 3D text](../../snapchat-advanced/clone/snapcode.png)
 
