@@ -17,7 +17,7 @@ homepage: 'https://modelsbymike3d.com'
 
 In this Spark AR tutorial you'll learn that making objects rotate around the head is super easy to do. All it takes is a little scene setup and the click of a button. You can see an example of this effect in action [by clicking here](https://www.instagram.com/ar/1393628470978921/) or by scanning the code below.
 
-![QR code leading to an example freckles effect for Instagram](../../instagram-beginner/rotate-around-head/qr-code.png)
+![QR code leading to an example effect for Instagram with objects rotating around the head](../../instagram-beginner/rotate-around-head/qr-code.png)
 
 ## Setting up the scene
 
