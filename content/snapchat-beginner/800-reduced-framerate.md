@@ -17,7 +17,7 @@ homepage: 'https://modelsbymike3d.com'
 
 In this Lens Studio tutorial you will learn how to create a reduced framerate filter to mimic old fashioned film cameras. You can easily add this effect to any lens and we'll use Lens Studio's new visual scripting editor. You can preview this effect by [clicking here](https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=9bbc641deec14df1a21c9f170b11ce04&metadata=01) or by scanning the snapcode below.
 
-![Snapcode for example lens with a sharpening effect](../../snapchat-beginner/reduced-framerate/snapcode.png)
+![Snapcode for example lens with a reduced framerate](../../snapchat-beginner/reduced-framerate/snapcode.png)
 
 ## Scene setup
 
